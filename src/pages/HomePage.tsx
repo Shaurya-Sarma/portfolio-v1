@@ -28,7 +28,7 @@ function HomePage() {
 
       <div className="flex flex-row h-full">
         {/* Hero Text Content */}
-        <div className="flex flex-col gap-8 text-left justify-center w-6/12 pl-36">
+        <div className="flex flex-col gap-8 text-left justify-center w-[55%] px-16">
           <h1 className="text-5xl font-semibold">Hey, I'm Shaurya Sarma</h1>
           <h2 className="text-2xl font-normal leading-7">
             I'm a student at the University of Pennsylvania, where I study
@@ -43,7 +43,7 @@ function HomePage() {
         </div>
 
         {/* 3D Model Demo */}
-        <div className="w-6/12 -z-40">
+        <div className="w-[45%] -z-40">
           <Canvas>
             {/* Post Processing Effect */}
             <EffectComposer>
@@ -58,12 +58,12 @@ function HomePage() {
                 luminanceSmoothing={0.33}
               />
               <Pixelation
-                granularity={1} // 5 has a cool pixel effect
+                granularity={2} // 5 has a cool pixel effect
               />
 
               <Noise
                 premultiply
-                opacity={0.3}
+                opacity={0.45}
                 blendFunction={BlendFunction.SCREEN}
               />
             </EffectComposer>
