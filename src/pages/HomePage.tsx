@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import AmbientLightWithHelper from "../helpers/AmbientLightWithHelper";
 import { Float } from "@react-three/drei";
 import Particles from "../components/Particles";
-import NavigationBar from "../components/NavigationBar";
 import { BlendFunction, ToneMappingMode } from "postprocessing";
 import {
   Bloom,
@@ -17,8 +16,6 @@ import {
 function HomePage() {
   return (
     <>
-      <NavigationBar />
-
       {/* Animated Particle Background */}
       <div className="fixed h-full w-full -z-50">
         <Canvas>
