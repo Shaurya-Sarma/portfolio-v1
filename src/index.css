@@ -64,22 +64,5 @@ body {
   animation: cursorRingExpand 0.5s forwards;
 }
 
-.link {
-  position: relative; 
-  pointer-events: none;
-}
 
-.bounds {
-  position: absolute; 
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  pointer-events: all;
 
-}
-
-.bounds:hover {
-  transform: scaleX(1.5) scaleY(5);
-}

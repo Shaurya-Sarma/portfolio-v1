@@ -9,3 +9,36 @@ export const HOME_BIO2 =
 export const NAVIGATION_HOME_LABEL = "Home";
 export const NAVIGATION_WORK_LABEL = "My Work";
 export const NAVIGATION_CONTACT_LABEL = "Contact Me";
+
+// ProjectsPage.tsx
+
+export const PROJECT_FILTER_HEADERS = [
+  "Software Dev",
+  "Computer Graphics",
+  "3d rendering",
+];
+
+export type ProjectKey = keyof typeof PROJECT_INFO;
+export type Project = {
+  title: string;
+  description: string;
+  skills: string;
+  type: string;
+  thumbnail: string;
+  demo_link: string;
+};
+export type ProjectTileProps = {
+  project: Project;
+};
+
+export const PROJECT_INFO = {
+  penn_place: {
+    title: "Penn Place",
+    description:
+      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
+    skills: "React, Three.js, Typescript, Python, MongoDB",
+    type: "Web Experience",
+    thumbnail: "penn_place.png",
+    demo_link: "https://penn.place/",
+  },
+} as const;
