@@ -7,7 +7,7 @@ function ProjectTile({ project }: ProjectTileProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <>
+    <div className="flex flex-col">
       {project.thumbnail && (
         <div
           className="relative w-full mb-10 overflow-hidden cursor-pointer select-none"
@@ -21,7 +21,7 @@ function ProjectTile({ project }: ProjectTileProps) {
                 : project.thumbnail
             }
             alt={`${project.title} Thumbnail`}
-            className="w-full h-auto max-h-[55vh] object-cover"
+            className="w-full h-[50vh] object-cover"
             style={{
               transform: isHovered ? "scale(1.1)" : "scale(1)",
               transition: "transform 1s ease",
@@ -68,7 +68,7 @@ function ProjectTile({ project }: ProjectTileProps) {
         <h4 className="text-lg uppercase font-semibold mb-3">Skills</h4>
         <p className="text-lg font-medium">{project.skills}</p>
       </div>
-    </>
+    </div>
   );
 }
 

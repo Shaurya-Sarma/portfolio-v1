@@ -33,7 +33,7 @@ function ProjectsPage() {
           >
             <StarIcon color="#000" size={40} />
           </div>
-          <div className="flex flex-row  gap-5">
+          <div className="flex flex-row gap-5">
             {PROJECT_FILTER_HEADERS.map((str, index) => {
               return (
                 <h3
@@ -46,11 +46,13 @@ function ProjectsPage() {
             })}
           </div>
         </div>
-        {/* Project Tile */}
-        {Object.keys(PROJECT_INFO).map((item) => {
-          const key = item as ProjectKey;
-          return <ProjectTile key={key} project={PROJECT_INFO[key]} />;
-        })}
+        {/* Project Carousel */}
+        <div className="flex flex-row w-screen gap-10">
+          {Object.keys(PROJECT_INFO).map((item) => {
+            const key = item as ProjectKey;
+            return <ProjectTile key={key} project={PROJECT_INFO[key]} />;
+          })}
+        </div>
       </div>
     </div>
   );
