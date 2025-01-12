@@ -25,6 +25,7 @@ export type Project = {
   skills: string;
   type: string;
   thumbnail: string;
+  animated_thumbnail: string;
   demo_link: string;
 };
 export type ProjectTileProps = {
@@ -39,6 +40,7 @@ export const PROJECT_INFO = {
     skills: "React, Three.js, Typescript, Python, MongoDB",
     type: "Web Experience",
     thumbnail: "penn_place.png",
+    animated_thumbnail: "penn_place.gif",
     demo_link: "https://penn.place/",
   },
 } as const;

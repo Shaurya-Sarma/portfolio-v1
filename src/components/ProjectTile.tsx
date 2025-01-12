@@ -1,21 +1,34 @@
+import { useState } from "react";
 import { ProjectTileProps } from "../constants";
 import { useCursorContext } from "../helpers/CursorContext";
 
 function ProjectTile({ project }: ProjectTileProps) {
   const { setCursorHover } = useCursorContext();
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <>
-      {/* Image/GIF with overlay */}
       {project.thumbnail && (
-        <div className="relative w-full mb-10">
+        <div
+          className="relative w-full mb-10 overflow-hidden cursor-pointer select-none"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <img
-            src={project.thumbnail}
+            src={
+              isHovered && project.animated_thumbnail
+                ? project.animated_thumbnail
+                : project.thumbnail
+            }
             alt={`${project.title} Thumbnail`}
-            className="w-full h-auto max-h-[55vh] rounded-lg object-cover "
+            className="w-full h-auto max-h-[55vh] object-cover"
+            style={{
+              transform: isHovered ? "scale(1.1)" : "scale(1)",
+              transition: "transform 1s ease",
+            }}
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
-            <h2 className="text-8xl uppercase font-bold text-white text-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity hover:opacity-0 duration-1000">
+            <h2 className="text-8xl uppercase font-bold text-white">
               {project.title}
             </h2>
           </div>
@@ -27,7 +40,7 @@ function ProjectTile({ project }: ProjectTileProps) {
         <div className="flex flex-row justify-between mb-3">
           <h4 className="text-lg uppercase font-semibold">Description</h4>
           <span className="flex flex-row">
-            <h4 className="text-lg uppercase font-semibold text-white bg-[#F5B700] px-1 mr-2">
+            <h4 className="text-lg uppercase font-semibold text-black bg-[#F5B700] px-1 mr-2">
               {project.type}
             </h4>
             {project.demo_link && (
@@ -49,6 +62,7 @@ function ProjectTile({ project }: ProjectTileProps) {
         </div>
         <p className="text-lg font-medium">{project.description}</p>
       </div>
+
       {/* Skills Text Box */}
       <div className="mb-5">
         <h4 className="text-lg uppercase font-semibold mb-3">Skills</h4>
