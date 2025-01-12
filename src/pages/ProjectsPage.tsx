@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import Particles from "../components/Particles";
-import { PROJECT_FILTER_HEADERS, PROJECT_INFO, ProjectKey } from "../constants";
-import ProjectTile from "../components/ProjectTile";
+import { PROJECT_FILTER_HEADERS } from "../helpers/constants";
 import { useNavigate } from "react-router-dom";
 import StarIcon from "../components/StarIcon";
 import { useCursorContext } from "../helpers/CursorContext";
@@ -19,7 +18,7 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col justify-center h-full m-auto px-5 py-12 max-w-screen-lg ">
+      <div className="flex flex-col h-full m-auto px-5 py-12 max-w-screen-lg">
         {/* Project Filter Bar */}
         <div className="flex flex-row justify-between mb-5 items-center">
           <div
@@ -47,12 +46,12 @@ function ProjectsPage() {
           </div>
         </div>
         {/* Project Carousel */}
-        <div className="flex flex-row w-screen gap-10">
-          {Object.keys(PROJECT_INFO).map((item) => {
+        {/* <div className="flex flex-row w-screen gap-10">
+          {Object.keys(PROJECT_METADATA).map((item) => {
             const key = item as ProjectKey;
-            return <ProjectTile key={key} project={PROJECT_INFO[key]} />;
+            return <ProjectTile key={key} project={PROJECT_METADATA[key]} />;
           })}
-        </div>
+        </div> */}
       </div>
     </div>
   );

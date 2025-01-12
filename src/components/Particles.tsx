@@ -7,7 +7,7 @@ import * as THREE from "three";
 function Particles(props: { smallCount: number; bigCount: number }) {
   // load textures
   const loader = new THREE.TextureLoader();
-  const circle = loader.load("circle.png");
+  const circle = loader.load("images/circle.png");
 
   // create point geometry with random position, rotation speed, shake intensity
   const smallParticlesGeometry = useMemo(() => {

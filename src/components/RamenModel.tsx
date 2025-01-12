@@ -2,7 +2,7 @@ import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
 function RamenModel() {
-  const model = useLoader(GLTFLoader, "/ramen.gltf");
+  const model = useLoader(GLTFLoader, "/models/ramen.gltf");
   return (
     <primitive
       object={model.scene}

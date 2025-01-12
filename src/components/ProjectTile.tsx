@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProjectTileProps } from "../constants";
+import { ProjectTileProps } from "../helpers/constants";
 import { useCursorContext } from "../helpers/CursorContext";
 
 function ProjectTile({ project }: ProjectTileProps) {
