@@ -52,7 +52,7 @@ function StickyCursor() {
 
   return (
     <motion.div
-      className="fixed w-4 h-4 rounded-full bg-[#F5B700] pointer-events-none select-none -z-10"
+      className="custom-cursor fixed w-4 h-4 rounded-full bg-[#F5B700] pointer-events-none select-none z-10"
       style={{
         left: smoothMouse.x,
         top: smoothMouse.y,

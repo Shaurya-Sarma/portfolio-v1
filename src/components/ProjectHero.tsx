@@ -7,7 +7,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="flex flex-col">
+    <>
       {project.thumbnail && (
         <div
           className="relative w-full mb-10 overflow-hidden cursor-pointer select-none"
@@ -21,13 +21,13 @@ function ProjectHero({ project }: ProjectHeroProps) {
                 : project.thumbnail
             }
             alt={`${project.title} Thumbnail`}
-            className="w-full h-[50vh] object-cover"
+            className="w-full object-cover shadow-2xl"
             style={{
               transform: isHovered ? "scale(1.1)" : "scale(1)",
               transition: "transform 1s ease",
             }}
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity hover:opacity-0 duration-1000">
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity hover:opacity-0 duration-1000 ">
             <h2 className="text-8xl uppercase font-bold text-white">
               {project.title}
             </h2>
@@ -45,7 +45,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
             </h4>
             {project.demo_link && (
               <h4
-                className="text-lg uppercase font-semibold border-l-2 border-black pl-2 cursor-pointer select-none"
+                className="text-lg uppercase font-semibold border-l-2 border-black pl-2 cursor-pointer select-none z-10"
                 onMouseEnter={() => setCursorHover(true)}
                 onMouseLeave={() => setCursorHover(false)}
               >
@@ -68,7 +68,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
         <h4 className="text-lg uppercase font-semibold mb-3">Skills</h4>
         <p className="text-lg font-medium">{project.skills}</p>
       </div>
-    </div>
+    </>
   );
 }
 

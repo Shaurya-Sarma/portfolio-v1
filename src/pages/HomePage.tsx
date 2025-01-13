@@ -26,7 +26,7 @@ function HomePage() {
           </Canvas>
         </div>
 
-        <div className="flex flex-row h-full m-auto max-w-screen-xl">
+        <main className="flex flex-row h-full m-auto max-w-screen-2xl">
           {/* Hero Text Content */}
           <div className="flex flex-col gap-8 text-left justify-center w-[55%] px-16">
             <h1 className="text-5xl font-semibold">Hey, I'm Shaurya Sarma</h1>
@@ -80,7 +80,7 @@ function HomePage() {
               <AmbientLightWithHelper />
             </Canvas>
           </div>
-        </div>
+        </main>
       </div>
     </>
   );

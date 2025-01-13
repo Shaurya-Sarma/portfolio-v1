@@ -6,7 +6,7 @@ interface ProjectTileProps {
   project: Project;
 }
 
-function ProjectTile(props: ProjectTileProps) {
+function ProjectItem(props: ProjectTileProps) {
   const navigate = useNavigate();
   return (
     <>
@@ -21,9 +21,11 @@ function ProjectTile(props: ProjectTileProps) {
           navigate(`/projects/${props.project.slug}`);
         }}
       />
-      <h4 className="text-xl font-medium lowercase text-left">Penn Place</h4>
+      <span className="text-xl font-medium lowercase text-left">
+        {props.project.title}
+      </span>
     </>
   );
 }
 
-export default ProjectTile;
+export default ProjectItem;

@@ -1,37 +1,24 @@
 import { useParams } from "react-router-dom";
+import PennPlace from "./projects/PennPlace";
 import { PROJECT_METADATA } from "../helpers/constants";
-import * as ProjectComponents from "./projects"; // Import all project components
-import { Canvas } from "@react-three/fiber";
-import Particles from "../components/Particles";
-import NavigationBar from "../components/NavigationBar";
+import Storify from "./projects/Storify";
+import ErrorPage from "../components/ErrorPage";
 
-const ProjectBreakdownPage = () => {
-  const { slug } = useParams<{ slug: string }>();
+//! react-router and r3f not very good together, canvas won't render in nested routes
 
-  // Check if the project exists in both components and metadata
-  const ProjectComponent =
-    ProjectComponents[slug as keyof typeof ProjectComponents];
-  const projectMetadata =
-    PROJECT_METADATA[slug as keyof typeof PROJECT_METADATA];
+function ProjectBreakdownPage() {
+  const { slug } = useParams<{ slug?: string }>();
 
-  let projectComponent;
-  console.log(projectComponent);
-  if (ProjectComponent && projectMetadata) {
-    // Render the component with the associated metadata
-    projectComponent = <ProjectComponent project={projectMetadata} />;
-  } else {
-    // Show NotFound component if slug doesn't match
-    projectComponent = <NotFound />;
-  }
+  const componentsMap: Record<string, JSX.Element> = {
+    "penn-place": <PennPlace project={PROJECT_METADATA.penn_place} />,
+    storify: <Storify project={PROJECT_METADATA.storify} />,
+  };
 
-  return (
-    <div className="max-w-screen-lg">
-      <NavigationBar></NavigationBar>
-      <div className="mt-32">{projectComponent}</div>
-    </div>
+  return slug && componentsMap[slug] ? (
+    <>{componentsMap[slug]}</>
+  ) : (
+    <ErrorPage message={"Project not found."} />
   );
-};
-
-const NotFound = () => <span>Project Not Found</span>;
+}
 
 export default ProjectBreakdownPage;

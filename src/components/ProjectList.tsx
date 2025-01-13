@@ -1,6 +1,6 @@
 import { PROJECT_METADATA, ProjectKey } from "../helpers/constants";
 import { useEffect, useState } from "react";
-import ProjectTile from "./ProjectTile";
+import ProjectItem from "./ProjectItem";
 
 function ProjectList() {
   const [columns, setColumns] = useState(1);
@@ -55,7 +55,7 @@ function ProjectList() {
                 transition: "transform 0.3s ease",
               }}
             >
-              <ProjectTile
+              <ProjectItem
                 project={PROJECT_METADATA[key]}
                 number={formattedIndex}
               />

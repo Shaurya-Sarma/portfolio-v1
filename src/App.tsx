@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import { CursorProvider } from "./helpers/CursorContext";
 import ProjectBreakdownPage from "./pages/ProjectBreakdownPage";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<ProjectsPage />} />
           <Route path="/projects/:slug" element={<ProjectBreakdownPage />} />
+          <Route path="*" element={<ErrorPage message="Page not found." />} />
         </Routes>
       </Router>
     </CursorProvider>
