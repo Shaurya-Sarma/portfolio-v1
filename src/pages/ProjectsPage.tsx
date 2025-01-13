@@ -4,13 +4,14 @@ import { PROJECT_FILTER_HEADERS } from "../helpers/constants";
 import { useNavigate } from "react-router-dom";
 import StarIcon from "../components/StarIcon";
 import { useCursorContext } from "../helpers/CursorContext";
+import ProjectList from "../components/ProjectList";
 
 function ProjectsPage() {
   const navigate = useNavigate();
   const { setCursorHover } = useCursorContext();
 
   return (
-    <div className="w-screen h-screen">
+    <div className="flex flex-row justify-center">
       {/* Animated Particle Background */}
       <div className="fixed h-full w-full -z-50">
         <Canvas>
@@ -18,9 +19,9 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col h-full m-auto px-5 py-12 max-w-screen-lg">
+      <div className="flex flex-col p-10 max-w-screen-lg ">
         {/* Project Filter Bar */}
-        <div className="flex flex-row justify-between mb-5 items-center">
+        <div className="flex flex-row justify-between items-center z-10">
           <div
             className="w-10 cursor-pointer"
             onMouseEnter={() => setCursorHover(true)}
@@ -45,13 +46,7 @@ function ProjectsPage() {
             })}
           </div>
         </div>
-        {/* Project Carousel */}
-        {/* <div className="flex flex-row w-screen gap-10">
-          {Object.keys(PROJECT_METADATA).map((item) => {
-            const key = item as ProjectKey;
-            return <ProjectTile key={key} project={PROJECT_METADATA[key]} />;
-          })}
-        </div> */}
+        <ProjectList />
       </div>
     </div>
   );
