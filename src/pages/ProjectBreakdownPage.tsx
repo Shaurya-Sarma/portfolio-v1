@@ -1,6 +1,9 @@
 import { useParams } from "react-router-dom";
 import { PROJECT_METADATA } from "../helpers/constants";
 import * as ProjectComponents from "./projects"; // Import all project components
+import { Canvas } from "@react-three/fiber";
+import Particles from "../components/Particles";
+import NavigationBar from "../components/NavigationBar";
 
 const ProjectBreakdownPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -21,9 +24,14 @@ const ProjectBreakdownPage = () => {
     projectComponent = <NotFound />;
   }
 
-  return <div>{projectComponent}</div>;
+  return (
+    <div className="max-w-screen-lg">
+      <NavigationBar></NavigationBar>
+      <div className="mt-32">{projectComponent}</div>
+    </div>
+  );
 };
 
-const NotFound = () => <div>Project Not Found</div>;
+const NotFound = () => <span>Project Not Found</span>;
 
 export default ProjectBreakdownPage;

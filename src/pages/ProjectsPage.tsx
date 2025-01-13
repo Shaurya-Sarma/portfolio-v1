@@ -19,7 +19,7 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col p-10 max-w-screen-lg ">
+      <div className="flex flex-col p-10 max-w-screen-xl ">
         {/* Project Filter Bar */}
         <div className="flex flex-row justify-between items-center z-10">
           <div
