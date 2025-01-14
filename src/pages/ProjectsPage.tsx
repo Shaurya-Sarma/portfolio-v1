@@ -1,9 +1,22 @@
 import { Canvas } from "@react-three/fiber";
 import Particles from "../components/Particles";
 import ProjectList from "../components/ProjectList";
+import ArtList from "../components/ArtList.tsx"; // Import the ArtList component
 import ProjectFilterBar from "../components/ProjectFilterBar";
+import { PROJECT_METADATA } from "../helpers/constants";
+import { useState } from "react";
 
 function ProjectsPage() {
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  // Filter the projects based on selected tag
+  const filteredProjects = Object.values(PROJECT_METADATA).filter((project) => {
+    return (
+      selectedTag === null ||
+      project.tags.some((tag) => tag.toLowerCase().includes(selectedTag))
+    );
+  });
+
   return (
     <div className="flex flex-row justify-center">
       {/* Animated Particle Background */}
@@ -13,11 +26,19 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col p-10 max-w-screen-xl ">
+      <div className="flex flex-col p-10 max-w-screen-xl">
         {/* Project Filter Bar */}
-        <ProjectFilterBar />
-        {/* Project List */}
-        <ProjectList />
+        <ProjectFilterBar
+          selectedTag={selectedTag}
+          setSelectedTag={setSelectedTag}
+        />
+
+        {/* Render either Project List or Art List based on selected tag*/}
+        {selectedTag === "3d renders" ? (
+          <ArtList />
+        ) : (
+          <ProjectList projects={filteredProjects} />
+        )}
       </div>
     </div>
   );

@@ -29,6 +29,7 @@ export type Project = {
   animated_thumbnail: string;
   demo_link: string;
   slug: string;
+  tags: readonly string[];
 };
 export type ProjectHeroProps = {
   project: Project;
@@ -45,6 +46,7 @@ export const PROJECT_METADATA = {
     animated_thumbnail: "/images/penn-place/penn_place.gif",
     demo_link: "https://penn.place/",
     slug: "penn-place",
+    tags: ["software dev, computer graphics"],
   },
   storify: {
     title: "Storify",
@@ -56,170 +58,6 @@ export const PROJECT_METADATA = {
     animated_thumbnail: "/images/storify/storify.gif",
     demo_link: "",
     slug: "storify",
-  },
-  penn_place21321321: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "/images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  21321: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place321321: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place321: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place12: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place1: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place132432: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place1342432: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place13243221321: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place4312432: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place43214324: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place3214312: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place4132432: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place312123: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
-  },
-  penn_place3123213421: {
-    title: "Penn Place",
-    description:
-      "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
-    skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
-    type: "Web Experience",
-    thumbnail: "images/penn-place/penn_place.png",
-    animated_thumbnail: "images/penn-place/penn_place.gif",
-    demo_link: "https://penn.place/",
-    slug: "penn-place",
+    tags: ["software dev"],
   },
 } as const;

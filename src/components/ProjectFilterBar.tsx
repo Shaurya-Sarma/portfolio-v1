@@ -3,9 +3,18 @@ import { useCursorContext } from "../helpers/CursorContext";
 import StarIcon from "./StarIcon";
 import { PROJECT_FILTER_HEADERS } from "../helpers/constants";
 
-function ProjectFilterBar() {
+interface ProjectFilterBarProps {
+  setSelectedTag: (tag: string | null) => void;
+  selectedTag: string | null;
+}
+
+function ProjectFilterBar({
+  setSelectedTag,
+  selectedTag,
+}: ProjectFilterBarProps) {
   const navigate = useNavigate();
   const { setCursorHover } = useCursorContext();
+
   return (
     <div className="flex flex-row justify-between items-center z-10">
       <div
@@ -19,12 +28,19 @@ function ProjectFilterBar() {
       >
         <StarIcon color="#000" size={40} />
       </div>
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row">
         {PROJECT_FILTER_HEADERS.map((str, index) => {
+          const isActive = selectedTag === str.toLowerCase();
+
           return (
             <h3
               key={index}
-              className="text-xl text-black uppercase font-medium"
+              className={`text-xl uppercase font-medium cursor-pointer text-black transition-all duration-150 p-2 ${
+                isActive ? "bg-[#F5B700] text-white" : ""
+              }`}
+              onClick={() =>
+                setSelectedTag(isActive ? null : str.toLowerCase())
+              }
             >
               {str}
             </h3>

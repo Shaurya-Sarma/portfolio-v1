@@ -1,8 +1,12 @@
-import { PROJECT_METADATA, ProjectKey } from "../helpers/constants";
+import { Project } from "../helpers/constants";
 import { useEffect, useState } from "react";
 import ProjectItem from "./ProjectItem";
 
-function ProjectList() {
+interface ProjectListProps {
+  projects: Project[];
+}
+
+function ProjectList(props: ProjectListProps) {
   const [columns, setColumns] = useState(1);
 
   useEffect(() => {
@@ -42,8 +46,7 @@ function ProjectList() {
       <ul
         className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 sm:gap-y-20 md:gap-y-32 gap-x-20 `}
       >
-        {Object.keys(PROJECT_METADATA).map((item, index) => {
-          const key = item as ProjectKey;
+        {props.projects.map((p, index) => {
           const formattedIndex = (index + 1).toString().padStart(3, "0");
 
           return (
@@ -55,10 +58,7 @@ function ProjectList() {
                 transition: "transform 0.3s ease",
               }}
             >
-              <ProjectItem
-                project={PROJECT_METADATA[key]}
-                number={formattedIndex}
-              />
+              <ProjectItem project={p} number={formattedIndex} />
             </li>
           );
         })}
