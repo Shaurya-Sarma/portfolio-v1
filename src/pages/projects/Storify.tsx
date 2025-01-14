@@ -12,13 +12,7 @@ const Storify: React.FC<{ project: Project }> = ({ project }) => {
         <ProjectHero project={project} />
 
         {/* Custom Content */}
-        <div className="pb-10">
-          <h4 className="text-lg uppercase font-semibold mb-3">Breakdown</h4>
-          <p className="text-lg font-medium">
-            Lorem ipsum {project.description} m {project.description} m{" "}
-            {project.description}{" "}
-          </p>
-        </div>
+        <div className="pb-10"></div>
       </main>
     </div>
   );

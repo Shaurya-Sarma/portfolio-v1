@@ -10,7 +10,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
     <>
       {project.thumbnail && (
         <div
-          className="relative w-full mb-10 overflow-hidden cursor-pointer select-none"
+          className="relative w-full mb-10 select-none cursor-none"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -21,13 +21,13 @@ function ProjectHero({ project }: ProjectHeroProps) {
                 : project.thumbnail
             }
             alt={`${project.title} Thumbnail`}
-            className="w-full object-cover shadow-2xl"
+            className="w-full object-cover rounded-md shadow-xl"
             style={{
-              transform: isHovered ? "scale(1.1)" : "scale(1)",
+              transform: isHovered ? "scale(1)" : "scale(1)",
               transition: "transform 1s ease",
             }}
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity hover:opacity-0 duration-1000 ">
+          <div className="absolute text-center inset-0 flex items-center rounded-md justify-center bg-black  bg-opacity-50 transition-opacity hover:opacity-0 duration-1000 ">
             <h2 className="text-8xl uppercase font-bold text-white">
               {project.title}
             </h2>

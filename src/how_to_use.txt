@@ -1,0 +1,28 @@
+// how to add new project
+- to add new project, add to PROJECT_METADATA in constants.ts
+- fill out slugToComponents map in ProjectBreakdown.tsx
+- create new component in /pages/projects folder and fill out as necessary <ProjectHero> provides base template
+
+// how to add new art or render
+
+// customizing the filters
+- edit the PROJECT_FILTERS in constants.ts
+- art tag loads ArtList instead of ProjectList
+- make sure to edit the tags attribute of each project 
+- current: software dev, computer graphics, 3d renders
+- alternative: software, for fun, art (etc)
+
+// todo 
+- add animations for loading (text, mask)
+- when click on project image thumbnail use image mask transition
+- write out project breakdowns for Penn Place
+- add custom components to easily transfer from markdown to website
+- for each markdown element create jsx component (text, header1, header2, callout, etc)
+- add table of contents element on the side to filter through on headings and scroll to them automatically
+
+// issues
+- react-router doesn't work well with r3f, forces the canvas to rerender so inefficient
+- canvas doesn't work in nested routes like /projects/project_name
+- could redo the navigation logic to better suit, react router sucks lowk 
+
+// how to update | deployment with... 

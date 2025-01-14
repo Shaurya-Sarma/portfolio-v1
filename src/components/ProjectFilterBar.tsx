@@ -35,8 +35,8 @@ function ProjectFilterBar({
           return (
             <h3
               key={index}
-              className={`text-xl uppercase font-medium cursor-pointer text-black transition-all duration-150 p-2 ${
-                isActive ? "bg-[#F5B700] text-white" : ""
+              className={`text-xl uppercase font-medium cursor-pointer select-none text-black transition-all duration-500 p-2 ${
+                isActive ? "bg-[#F5B700] " : ""
               }`}
               onClick={() =>
                 setSelectedTag(isActive ? null : str.toLowerCase())
