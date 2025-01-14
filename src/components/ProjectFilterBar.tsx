@@ -28,7 +28,7 @@ function ProjectFilterBar({
       >
         <StarIcon color="#000" size={40} />
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-5">
         {PROJECT_FILTER_HEADERS.map((str, index) => {
           const isActive = selectedTag === str.toLowerCase();
 
