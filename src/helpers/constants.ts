@@ -24,6 +24,7 @@ export type Project = {
   title: string;
   description: string;
   skills: string;
+  roles: string;
   type: string;
   thumbnail: string;
   animated_thumbnail: string;
@@ -41,6 +42,7 @@ export const PROJECT_METADATA = {
     description:
       "Penn Place is a collaborative digital art experiment created over an eight-week span, inviting users to design 3D art in a shared voxel grid. Inspired by Reddit's r/place, this platform allows participants to place colored voxels (blocks) in a 3D space, shaping a dynamic digital canvas in real time.",
     skills: "React, Three.js, Typescript, MongoDB, Redis, AWS",
+    roles: "Project Lead, Developer, Designer",
     type: "Web Experience",
     thumbnail: "/images/penn-place/penn_place.png",
     animated_thumbnail: "/images/penn-place/penn_place.gif",
@@ -53,6 +55,7 @@ export const PROJECT_METADATA = {
     description:
       "Storify is a storybook generator powered by generative art. Through any user prompt, an family-friendly AI story is created alongside a series of multiple choice comprehension questions. After, the story is brought to life in a picturebook-esque expereince through AI-generated images.",
     skills: "React, Typescript, Python, Gemini API, Stable Diffusion",
+    roles: "",
     type: "Concept",
     thumbnail: `/images/storify/storify.png`,
     animated_thumbnail: "/images/storify/storify.gif",
@@ -65,6 +68,7 @@ export const PROJECT_METADATA = {
     description:
       "A 2D action-platformer game inspired by some of my favorite games I played growing up like Dark Souls, Celeste, and The Legend of Zelda. Involved level design, game state management, AI-behavior for various types of enemies (including boss behavior with multiple phases), and exploration-puzzle features like keys + doors. Assets were mostly found from http://opengameart.org and the Unity Asset Store, however, a few were made from scratch.",
     skills: "Unity 2D, C#, Aesprite",
+    roles: "",
     type: "Game Dev",
     thumbnail: "/images/resurrection/resurrection.png",
     animated_thumbnail: "/images/resurrection/resurrection.gif",
@@ -77,6 +81,7 @@ export const PROJECT_METADATA = {
     description:
       "A productivity app designed specifically for students I was tutoring. Includes a pomodoro system, daily agenda list, curated videos targetting studying-related topics, customizable routines to design your own study sessions. The pomodoro system has two unique focus modes: one that forces you to flip your phone upside down to eliminate distrctions and a lockdown mode to keep you inside the app and resist the temptation to scroll or check social media.",
     skills: "React Native, Typescript",
+    roles: "",
     type: "Mobile Dev",
     thumbnail: "/images/studyhungry/studyhungry.png",
     animated_thumbnail: "/images/studyhungry/studyhungry.png",
@@ -89,6 +94,7 @@ export const PROJECT_METADATA = {
     description:
       "An interactive visualization of the Traveling Salesperson Problem using a genetic algorithm called Neuroevolution of Augmenting Topologies (NEAT). Users can tweak the number of cities and salespeople to watch the algorithm evolve optimized routes over generations, simulating natural selection, mutations, and inheritance. This project combines optimization, AI, and neural network evolution to solve a classic problem in a visually engaging way.",
     skills: "React Native, Typescript",
+    roles: "",
     type: "Interactive Visualization",
     thumbnail:
       "/images/traveling-salesperson-visualization/traveling-salesperson-visualization.png",

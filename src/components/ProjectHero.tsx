@@ -63,10 +63,18 @@ function ProjectHero({ project }: ProjectHeroProps) {
         <p className="text-lg font-medium">{project.description}</p>
       </div>
 
-      {/* Skills Text Box */}
-      <div className="mb-5">
-        <h4 className="text-lg uppercase font-semibold mb-3">Skills</h4>
-        <p className="text-lg font-medium">{project.skills}</p>
+      {/* Skills and Roles Text Box */}
+      <div className="flex flex-col md:flex-row md:justify-between">
+        <div className="mb-5">
+          <h4 className="text-lg uppercase font-semibold mb-3">Skills</h4>
+          <p className="text-lg font-medium">{project.skills}</p>
+        </div>
+        {project.roles && (
+          <div className="mb-5 ml-0 md:ml-5">
+            <h4 className="text-lg uppercase font-semibold mb-3">Roles</h4>
+            <p className="text-lg font-medium">{project.roles}</p>
+          </div>
+        )}
       </div>
     </>
   );

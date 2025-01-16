@@ -62,6 +62,39 @@ body {
   animation: cursorRingExpand 0.5s forwards;
 }
 
+.heading {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #000
+}
+
+.subheading {
+  font-size: 1.125rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111
+}
+
+.text {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.callout {
+
+}
+
+.list {
+  list-style-type: disc;
+}
+
+
+
 
 /* @keyframes fade-in {
   from {

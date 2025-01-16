@@ -13,10 +13,16 @@ const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
 
         {/* Custom Content */}
         <div className="pb-10">
-          <h4 className="text-lg uppercase font-semibold mb-3">Breakdown</h4>
-          <p className="text-lg font-medium">
-            Lorem ipsum {project.description} m {project.description} m{" "}
-            {project.description}{" "}
+          <h4 className="heading">Breakdown</h4>
+          <h5 className="subheading">Design</h5>
+          <p className="text">
+            We analyzed Reddit's r/place UI design and tools like three.js's
+            editor to create a streamlined and accessible experience. Our
+            primary focus was to minimize interactions required to place a
+            block, while ensuring smooth usability across devices. We
+            prioritized laptop -&gt; mobile -&gt; desktop devices as we expected
+            these devices would be the most frequented among our targeted
+            userbase.
           </p>
         </div>
       </main>
