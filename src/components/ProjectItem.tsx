@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Project } from "../helpers/constants";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 interface ProjectTileProps {
   number: string;
@@ -8,11 +10,25 @@ interface ProjectTileProps {
 
 function ProjectItem(props: ProjectTileProps) {
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const states = {
+    initial: { y: 0, opacity: 1 },
+    hoverDown: { y: 10, opacity: 0 },
+    hoverUp: { y: -10, opacity: 0 },
+  };
+
   return (
     <>
-      <span className="text-xl font-medium uppercase -mb-1 text-left -z-10">
+      <motion.span
+        className="text-xl font-medium uppercase -mb-1 text-left -z-10"
+        variants={states}
+        initial="initial"
+        animate={isHovered ? "hoverDown" : "initial"}
+        transition={{ duration: 0.25 }}
+      >
         {props.number}
-      </span>
+      </motion.span>
       <img
         src={props.project.thumbnail}
         alt={`Thumbnail for ${props.number}`}
@@ -20,10 +36,18 @@ function ProjectItem(props: ProjectTileProps) {
         onClick={() => {
           navigate(`/projects/${props.project.slug}`);
         }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       />
-      <span className="text-xl font-medium lowercase text-left">
+      <motion.span
+        className="text-xl font-medium lowercase text-left -z-10"
+        variants={states}
+        initial="initial"
+        animate={isHovered ? "hoverUp" : "initial"}
+        transition={{ duration: 0.25 }}
+      >
         {props.project.title}
-      </span>
+      </motion.span>
     </>
   );
 }
