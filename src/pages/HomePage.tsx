@@ -24,7 +24,7 @@ function HomePage() {
   useEffect(() => {
     const updateSize = () => {
       const size = Math.min(
-        window.innerWidth * (isTabletOrMobile ? 0.8 : 0.4),
+        window.innerWidth * (isTabletOrMobile ? 0.75 : 0.4),
         isTabletOrMobile ? 1200 : 800 // limit the size to a maximum
       );
       setCanvasSize({ size });
