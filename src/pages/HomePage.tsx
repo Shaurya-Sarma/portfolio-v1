@@ -24,8 +24,8 @@ function HomePage() {
   useEffect(() => {
     const updateSize = () => {
       const size =
-        Math.min(window.innerWidth, window.innerHeight) *
-        (isTabletOrMobile ? 0.8 : 0.5);
+        Math.min(window.innerWidth, window.innerWidth) *
+        (isTabletOrMobile ? 0.7 : 0.4);
       setCanvasSize({ size });
     };
 
@@ -45,7 +45,7 @@ function HomePage() {
           </Canvas>
         </div>
 
-        <main className="flex flex-col-reverse justify-center gap-8 items-center h-full m-auto max-w-screen-2xl md:flex-row md:gap-0 lg:gap-5">
+        <main className="flex flex-col-reverse justify-center gap-2 items-center h-full m-auto max-w-screen-2xl md:flex-row md:gap-0 lg:gap-5">
           {/* Hero Text Content */}
           <div className="flex flex-col gap-4 text-left justify-center w-[80%] px-0  md:px-8 md:w-[55%] md:mt-0 lg:gap-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold ">
