@@ -67,7 +67,7 @@ body {
   line-height: 1.75rem;
   text-transform: uppercase;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   color: #000
 }
 
@@ -76,14 +76,14 @@ body {
   line-height: 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   color: #111
 }
 
 .breakdown p {
   font-size: 1.125rem;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .breakdown a {
@@ -91,11 +91,10 @@ body {
   text-decoration: underline;
 }
 
-
-.breakdown > .callout {
+.breakdown .callout {
   font-size: 1.125rem;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
   padding: 1rem;
   border-left: 0.25rem #e99518 solid;
   background-color: #f2f2f2;
@@ -106,7 +105,7 @@ body {
 .breakdown ul {
   list-style-type: disc;
   padding-left: 2.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .breakdown figure {
@@ -117,7 +116,7 @@ body {
 
 .breakdown img {
   width: 100%;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .breakdown figcaption {
@@ -131,7 +130,11 @@ body {
 .breakdown ol {
   list-style-type: lower-roman;
   padding-left: 2.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.breakdown .code {
+  margin: 1.5rem 0;
 }
 
 .breakdown li {

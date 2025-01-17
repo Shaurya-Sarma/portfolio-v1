@@ -158,7 +158,7 @@ const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
             the coordinates according to the grid's cell dimensions, we created
             a snapping mechanism with the mouse cursor.
           </p>
-          <pre>
+          <div className="code">
             <SyntaxHighlighter
               language={"typescript"}
               style={oneDark}
@@ -173,7 +173,7 @@ if (intersect.face) {
     .multiplyScalar(VOXEL_SIZE)
     .addScalar(VOXEL_SIZE / 2);
 }`}</SyntaxHighlighter>
-          </pre>
+          </div>
           <p>
             To extend this into 3-dimensions, we decided to implement block
             placement similar to <i>Minecraft</i>. Blocks can be placed anywhere
@@ -265,26 +265,29 @@ if (intersect.face) {
             long binary sequence that stored our voxel color data. Then, we
             implicitly stored the (x,y,z) data based on a 4-bit integer's
             location in the binary string via an offset function:{" "}
-            <SyntaxHighlighter
-              language={"typescript"}
-              style={oneDark}
-              showLineNumbers={false}
-              wrapLines={true}
-            >{`// helper function to calculate the offset for a voxel
+            <div className="code">
+              <SyntaxHighlighter
+                language={"typescript"}
+                style={oneDark}
+                showLineNumbers={false}
+                wrapLines={true}
+              >{`// helper function to calculate the offset for a voxel
 const getOffset = (x, y, z) => {
   return x + BOARD_SIZE * z + BOARD_SIZE * BOARD_SIZE * y;
-};`}</SyntaxHighlighter>{" "}
+};`}</SyntaxHighlighter>
+            </div>{" "}
             This allowed us to flatten our 3D canvas into a 1D binary sequence.
             With the offset function and some binary manipulation, I was able to
             write a deserializer to extract the data from its binary
             representation:
           </p>
-          <SyntaxHighlighter
-            language={"typescript"}
-            style={oneDark}
-            showLineNumbers={false}
-            wrapLines={true}
-          >{`// take bit representation of board and return array of voxels
+          <div className="code">
+            <SyntaxHighlighter
+              language={"typescript"}
+              style={oneDark}
+              showLineNumbers={false}
+              wrapLines={true}
+            >{`// take bit representation of board and return array of voxels
 export const deserializeVoxels = (binaryVoxels) => {
   const voxelData = [];
 
@@ -310,7 +313,8 @@ export const deserializeVoxels = (binaryVoxels) => {
   }
 
   return voxelData;
-};`}</SyntaxHighlighter>{" "}
+};`}</SyntaxHighlighter>
+          </div>{" "}
           <p>
             The combination of MongoDB and Redis allowed us to deploy Penn Place
             and handle multiple websocket connections despite using a
