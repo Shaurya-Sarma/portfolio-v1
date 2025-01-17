@@ -26,6 +26,14 @@ const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
             could have been taken given a wider or different, more niche
             audience.
           </p>
+          <iframe
+            className="w-full h-[60vh] my-5 rounded-sm shadow-md"
+            src="https://www.youtube.com/embed/wXLZzfUHTiA?si=35WLmLU8jMBv67-i&vq=hd1080"
+            title="Penn Place Demo"
+            allowFullScreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
           <p>
             Near the end, our system seemed to have some rendering lag issues
             due to the number of voxels placed, but I hypothesize it was a
@@ -34,8 +42,14 @@ const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
           <h5>Design</h5>
           <p>
             We analyzed Reddit's r/place UI design and tools like{" "}
-            <a href="https://threejs.org/editor/">three.js's editor</a> to
-            create a streamlined and accessible experience.
+            <a
+              href="https://threejs.org/editor/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              three.js's editor
+            </a>{" "}
+            to create a streamlined and accessible experience.
           </p>
           <div className="callout">
             Our design philosophy was to <i>minimize</i> the number of
@@ -127,9 +141,15 @@ const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
           <h5 className="heading">Implementation</h5>
           <p>
             The origination of Penn Place came from extending{" "}
-            <a href="https://www.reddit.com/r/place/">r/place</a> from
-            2-dimensions to 3-dimensions. This would require the addition of a{" "}
-            <i>z-axis</i> and converting pixels into <i>voxels</i>.
+            <a
+              href="https://www.reddit.com/r/place/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              r/place
+            </a>{" "}
+            from 2-dimensions to 3-dimensions. This would require the addition
+            of a <i>z-axis</i> and converting pixels into <i>voxels</i>.
           </p>
           <h6>Voxel Placement</h6>
           <p>
@@ -165,7 +185,11 @@ if (intersect.face) {
           </p>
           <p>
             <i>Aside:</i> The{" "}
-            <a href="https://www.nature.com/articles/s41598-020-70427-x">
+            <a
+              href="https://www.nature.com/articles/s41598-020-70427-x"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               moiré effect
             </a>{" "}
             was an problem we encountered with the visual aspect of the plane.
@@ -189,7 +213,11 @@ if (intersect.face) {
           <p>
             But for this to sync between all users we needed to store all the
             data in an effective, compact manner. Reddit's{" "}
-            <a href="https://redditinc.com/blog/how-we-built-rplace">
+            <a
+              href="https://redditinc.com/blog/how-we-built-rplace"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               blog post
             </a>{" "}
             was integral in designing our version of Penn Place's backend. We
@@ -218,13 +246,17 @@ if (intersect.face) {
           </p>
           <div className="callout">
             Storing the metadata of every voxel placement (i.e. coordinates,
-            color, time placed) allow us to reconstruct a timelapse locally by
-            iterating through all data objects. Also, it provided a backup copy
-            of the data.
+            color, time placed) in MongoDB allow us to reconstruct a timelapse
+            locally by iterating through all the documents. Also, it provided a
+            backup copy of the data.
           </div>
           <p>
             We leveraged{" "}
-            <a href="https://redis.io/docs/latest/develop/data-types/bitfields/">
+            <a
+              href="https://redis.io/docs/latest/develop/data-types/bitfields/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Redis's bitfields
             </a>{" "}
             which meant we had to store our entire canvas state within one
@@ -290,7 +322,18 @@ export const deserializeVoxels = (binaryVoxels) => {
             This idea came about as a way to combine interactive 3D art with
             Penn's campus culture, letting students collectively shape a unique
             visual experience. It was exciting to see how three.js could be used
-            on the web
+            on the web in a shared interactive experience. The best part of this
+            project was seeing how multiple people worked on a single creation,
+            improving on it each time. Every time I logged on I would see some
+            part of the canvas altered in a new, interesting way.
+          </p>
+          <p>
+            Other than that, I learned a lot about WebSockets and the importance
+            of designing an efficient, scalable database. This was a project
+            where having an inefficient, messy backend would have tangible
+            consequences which would have ruined the experience for users. I
+            look forward to experimenting more with 3D on the web and
+            collaborative, social experiences. Thank you for reading!
           </p>
         </div>
       </main>

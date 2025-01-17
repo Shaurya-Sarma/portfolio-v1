@@ -140,6 +140,11 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.breakdown .video {
+  width: 100%;
+  height: 50vh;
+}
+
 
 
 /* @keyframes fade-in {

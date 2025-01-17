@@ -54,7 +54,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Play Demo
+                  Demo
                 </a>
               </h4>
             )}
