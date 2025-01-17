@@ -28,15 +28,28 @@ function NavigationBar() {
           My Work
         </Link>
       )}
-      <Link
-        onMouseEnter={() => setCursorHover(true)}
-        onMouseLeave={() => setCursorHover(false)}
-        onClick={() => setCursorHover(false)}
-        to="/contact"
-        className="uppercase text-xl"
-      >
-        Contact Me
-      </Link>
+
+      {location.pathname === "/contact" ? (
+        <Link
+          onMouseEnter={() => setCursorHover(true)}
+          onMouseLeave={() => setCursorHover(false)}
+          onClick={() => setCursorHover(false)}
+          to="/"
+          className="uppercase text-xl"
+        >
+          Home
+        </Link>
+      ) : (
+        <Link
+          onMouseEnter={() => setCursorHover(true)}
+          onMouseLeave={() => setCursorHover(false)}
+          onClick={() => setCursorHover(false)}
+          to="/contact"
+          className="uppercase text-xl"
+        >
+          Contact Me
+        </Link>
+      )}
     </div>
   );
 }

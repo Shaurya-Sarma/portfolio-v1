@@ -28,7 +28,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
             }}
           />
           <div className="absolute text-center inset-0 flex items-center rounded-md justify-center bg-black  bg-opacity-50 transition-opacity hover:opacity-0 duration-1000 ">
-            <h2 className="text-8xl uppercase font-bold text-white">
+            <h2 className="text-5xl uppercase font-bold text-white md:text-7xl lg:text-8xl">
               {project.title}
             </h2>
           </div>
