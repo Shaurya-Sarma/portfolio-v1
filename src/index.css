@@ -109,17 +109,21 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.breakdown img {
+.breakdown figure {
   object-fit: cover;
   margin: 1.5rem 0;
   border-radius: 0.375rem;
+}
+
+.breakdown img {
+  width: 100%;
+  margin-bottom: 0.75rem;
 }
 
 .breakdown figcaption {
   font-size: 1.125rem;
   color: #1E1E1E;
   font-weight: 500;
-  margin-bottom: 0.75rem;
   font-style: italic;
   text-align: center;
 }
@@ -134,10 +138,6 @@ body {
   font-size: 1.125rem;
   font-weight: 500;
   margin-bottom: 0.25rem;
-}
-
-.breakdown pre  {
-  margin-bottom: 0.75rem;
 }
 
 .breakdown .video {

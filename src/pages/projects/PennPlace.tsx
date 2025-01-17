@@ -57,7 +57,7 @@ const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
           </div>
           <figure>
             <img
-              className="w-full my-3 rounded-sm shadow-md"
+              className="rounded-sm shadow-md"
               alt="userflow animation"
               src="/images/penn-place/userflow.gif"
             />
@@ -99,7 +99,7 @@ const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
           </ul>
           <figure>
             <img
-              className="w-full my-3 rounded-sm shadow-md"
+              className="rounded-sm shadow-md"
               alt="widget designs"
               src="/images/penn-place/editing_mode.png"
             />
