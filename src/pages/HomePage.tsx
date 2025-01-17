@@ -1,6 +1,5 @@
 import RamenModel from "../components/RamenModel";
 import { Canvas } from "@react-three/fiber";
-import AmbientLightWithHelper from "../helpers/AmbientLightWithHelper";
 import { Float } from "@react-three/drei";
 import Particles from "../components/Particles";
 import { BlendFunction, ToneMappingMode } from "postprocessing";
@@ -9,7 +8,6 @@ import {
   EffectComposer,
   Noise,
   Pixelation,
-  Scanline,
   ToneMapping,
 } from "@react-three/postprocessing";
 import NavigationBar from "../components/NavigationBar";

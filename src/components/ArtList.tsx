@@ -1,19 +1,18 @@
-import { useState } from "react";
 import { ART_IMAGES } from "../helpers/constants";
 
 function ArtList() {
-  const [selectedImage, setSelectedImage] = useState<string>();
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  // const [selectedImage, setSelectedImage] = useState<string>();
+  // const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const openModal = (url: string) => {
-    setIsModalOpen(true);
-    setSelectedImage(url);
-  };
+  // const openModal = (url: string) => {
+  //   setIsModalOpen(true);
+  //   setSelectedImage(url);
+  // };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedImage("");
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  //   setSelectedImage("");
+  // };
 
   return (
     <div className="w-full flex flex-col items-center mt-10 mb-20">
@@ -25,7 +24,7 @@ function ArtList() {
               src={src}
               alt={`Art ${index + 1}`}
               className="h-full object-cover select-none rounded-sm shadow-md cursor-pointer"
-              onClick={() => openModal(src)}
+              // onClick={() => openModal(src)}
             />
           </li>
         ))}

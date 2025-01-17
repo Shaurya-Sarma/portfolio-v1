@@ -1,7 +1,7 @@
 import { useControls } from "leva";
 
 function AmbientLightWithHelper() {
-  const { color, intensity } = useControls({
+  const { intensity } = useControls({
     color: "#fff",
     intensity: {
       value: 4,

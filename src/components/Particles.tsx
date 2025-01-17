@@ -1,5 +1,4 @@
 import { useFrame } from "@react-three/fiber";
-import { useControls } from "leva";
 import { useMemo } from "react";
 import { BufferGeometry, Float32BufferAttribute } from "three";
 import * as THREE from "three";
@@ -98,13 +97,13 @@ function Particles(props: { smallCount: number; bigCount: number }) {
   );
 
   // render loop
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime();
-    animateSmallParticles(time);
-    animateLargeParticles(time);
+  useFrame(() => {
+    // const time = clock.getElapsedTime();
+    animateSmallParticles();
+    animateLargeParticles();
   });
 
-  const animateSmallParticles = (time: number) => {
+  const animateSmallParticles = () => {
     smallParticlesGeometry.rotateZ(0.00025);
 
     // // animate small background particles in spiral motion with slight shake
@@ -133,7 +132,7 @@ function Particles(props: { smallCount: number; bigCount: number }) {
     // smallParticlesGeometry.scale(factor, factor, factor);
   };
 
-  const animateLargeParticles = (time: number) => {
+  const animateLargeParticles = () => {
     // Access the position and fallSpeed attributes
     const positions = largeParticlesGeometry.attributes.position.array;
     const fallSpeeds = largeParticlesGeometry.attributes.fallSpeed.array;
