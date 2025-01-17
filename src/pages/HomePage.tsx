@@ -23,9 +23,10 @@ function HomePage() {
   // update canvas size based on screen width and media query
   useEffect(() => {
     const updateSize = () => {
-      const size =
-        Math.min(window.innerWidth, window.innerWidth) *
-        (isTabletOrMobile ? 0.7 : 0.4);
+      const size = Math.min(
+        window.innerWidth * (isTabletOrMobile ? 0.8 : 0.4),
+        isTabletOrMobile ? 1200 : 800 // limit the size to a maximum
+      );
       setCanvasSize({ size });
     };
 
@@ -64,15 +65,14 @@ function HomePage() {
           </div>
 
           {/* 3D Model Demo */}
-          <div
-            style={{
-              width: canvasSize.size,
-              height: canvasSize.size,
-              position: "relative",
-            }}
-            className="mb-2 md:mb-0"
-          >
-            <Canvas>
+          <div className="mb-2 md:mb-0">
+            <Canvas
+              style={{
+                width: canvasSize.size,
+                height: canvasSize.size,
+                position: "relative",
+              }}
+            >
               {/* Post Processing Effect */}
               <EffectComposer>
                 <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
