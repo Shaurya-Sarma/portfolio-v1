@@ -6,6 +6,7 @@ import ErrorPage from "../components/ErrorPage";
 import Resurrection from "./projects/Resurrection";
 import TravelingSalespersonProblem from "./projects/TravelingSalespersonProblem";
 import StudyHungry from "./projects/StudyHungry";
+import Echo from "./projects/Echo";
 
 //! react-router and r3f not very good together, canvas won't render in nested routes
 
@@ -20,6 +21,7 @@ function ProjectBreakdownPage() {
       <TravelingSalespersonProblem project={PROJECT_METADATA.tsp_problem} />
     ),
     studyhungry: <StudyHungry project={PROJECT_METADATA.studyhungry} />,
+    echo: <Echo project={PROJECT_METADATA.echo} />,
   };
 
   return slug && componentsMap[slug] ? (

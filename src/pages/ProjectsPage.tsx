@@ -26,7 +26,7 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col p-10 max-w-screen-xl">
+      <div className="flex flex-col p-10 max-w-screen-xl mb-20">
         {/* Project Filter Bar */}
         <ProjectFilterBar
           selectedTag={selectedTag}

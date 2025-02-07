@@ -24,5 +24,7 @@
 - react-router doesn't work well with r3f, forces the canvas to rerender so inefficient
 - canvas doesn't work in nested routes like /projects/project_name
 - could redo the navigation logic to better suit, react router sucks lowk 
+- refactor website with next.js
 
 // how to update | deployment with... 
+- pushing to git will update vercel link and therefore done

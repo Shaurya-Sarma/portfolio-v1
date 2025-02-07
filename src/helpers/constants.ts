@@ -50,6 +50,20 @@ export const PROJECT_METADATA = {
     slug: "penn-place",
     tags: ["software dev, computer graphics"],
   },
+  echo: {
+    title: "Echo",
+    description:
+      "Echo is an innovative AI-powered solution that gives a voice to those who can no longer speak. Using Visual Speech Recognition (VSR), our system tracks mouth movements and converts them into spoken words, allowing users to communicate naturally.",
+    skills:
+      "Next.js, React, Typescript, Python, Flask, PyTorch, MediaPipe, MongoDB",
+    roles: "",
+    type: "Concept",
+    thumbnail: `/images/echo/echo.png`,
+    animated_thumbnail: "/images/echo/echo.gif",
+    demo_link: "",
+    slug: "echo",
+    tags: ["software dev"],
+  },
   storify: {
     title: "Storify",
     description:

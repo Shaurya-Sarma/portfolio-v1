@@ -44,7 +44,7 @@ function ProjectList(props: ProjectListProps) {
   return (
     <div className="flex flex-row justify-center mt-10 mb-20">
       <ul
-        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 sm:gap-y-20 md:gap-y-32 gap-x-20 `}
+        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 sm:gap-y-20 md:gap-y-30 gap-x-20 `}
       >
         {props.projects.map((p, index) => {
           const formattedIndex = (index + 1).toString().padStart(3, "0");

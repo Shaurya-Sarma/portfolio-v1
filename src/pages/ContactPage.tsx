@@ -22,7 +22,7 @@ function ContactPage() {
       <div className="w-screen h-screen flex flex-col items-center justify-center ">
         {/* Contact Information */}
         <main className="flex flex-col items-center justify-center max-w-screen-md w-full text-center p-4">
-          <h1 className="text-4xl sm:text-5xl font-semibold mb-12">
+          <h1 className="text-4xl sm:text-5xl font-semibold mb-16">
             Want to get in touch?
           </h1>
 
