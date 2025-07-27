@@ -50,6 +50,32 @@ export const PROJECT_METADATA = {
     slug: "penn-place",
     tags: ["software dev, computer graphics"],
   },
+  lattice_configurator: {
+    title: "Immersive XR Lattice Configurator",
+    description:
+      "A research project that explores how immersive technologies can transform Additive Manufacturing (AM) workflows through interactive, haptic simulations of compressible lattice structures via virtual reality. As opposed to the traditional process of printing and testing lattices manually, this project explores a digital alternative: a real-time XR environment that allows users to generate lattice structures procedurally, manipulate parameters dynamically, and feel their mechanical response through SenseGlove Nova 2 haptic gloves",
+    skills: "Unity, VR, C#, Blender, Python",
+    roles: "Researcher, Developer",
+    type: "Research Project",
+    thumbnail: "/images/lattice-configurator/lattice-configurator.png",
+    animated_thumbnail: "/images/lattice-configurator/lattice-configurator.gif",
+    demo_link: "",
+    slug: "lattice-configurator",
+    tags: ["software dev, computer graphics"],
+  },
+  capsule: {
+    title: "Capsule",
+    description:
+      "Capsule is an interactive 3D platform where users can upload memories (.i.e photos/videos) as gachapon capsules that fill up a virtual gachapon machine. When opened, the time capsule reveals a dynamic, shareable 3D experience, offering an immersive way to revisit and celebrate collective moments.",
+    skills: "React, Three.js, Typescript, MongoDB, Spline",
+    roles: "Project Lead, Developer, Designer",
+    type: "Web Experience",
+    thumbnail: "/images/capsule/capsule.png",
+    animated_thumbnail: "/images/capsule/capsule.gif",
+    demo_link: "",
+    slug: "capsule",
+    tags: ["computer graphics, software dev"],
+  },
   echo: {
     title: "Echo",
     description:

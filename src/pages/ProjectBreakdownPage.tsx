@@ -7,6 +7,8 @@ import Resurrection from "./projects/Resurrection";
 import TravelingSalespersonProblem from "./projects/TravelingSalespersonProblem";
 import StudyHungry from "./projects/StudyHungry";
 import Echo from "./projects/Echo";
+import Capsule from "./projects/Capsule";
+import LatticeConfigurator from "./projects/LatticeConfigurator";
 
 //! react-router and r3f not very good together, canvas won't render in nested routes
 
@@ -22,6 +24,10 @@ function ProjectBreakdownPage() {
     ),
     studyhungry: <StudyHungry project={PROJECT_METADATA.studyhungry} />,
     echo: <Echo project={PROJECT_METADATA.echo} />,
+    capsule: <Capsule project={PROJECT_METADATA.capsule} />,
+    "lattice-configurator": (
+      <LatticeConfigurator project={PROJECT_METADATA.lattice_configurator} />
+    ),
   };
 
   return slug && componentsMap[slug] ? (
