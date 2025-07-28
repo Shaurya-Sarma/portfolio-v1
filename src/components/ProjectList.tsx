@@ -18,9 +18,9 @@ function ProjectList(props: ProjectListProps) {
   }, []);
 
   const updateColumns = () => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1024) {
       setColumns(3); // for large screens
-    } else if (window.innerWidth >= 640) {
+    } else if (window.innerWidth >= 768) {
       setColumns(2); // for medium screens
     } else {
       setColumns(1); // for small screens
@@ -44,7 +44,7 @@ function ProjectList(props: ProjectListProps) {
   return (
     <div className="flex flex-row justify-center mt-10 mb-20">
       <ul
-        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 sm:gap-y-20 md:gap-y-30 gap-x-20 `}
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-y-20 lg:gap-y-30 gap-x-20 `}
       >
         {props.projects.map((p, index) => {
           const formattedIndex = (index + 1).toString().padStart(3, "0");

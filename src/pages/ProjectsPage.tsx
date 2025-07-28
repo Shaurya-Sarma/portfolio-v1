@@ -5,6 +5,7 @@ import ArtList from "../components/ArtList.tsx"; // Import the ArtList component
 import ProjectFilterBar from "../components/ProjectFilterBar";
 import { PROJECT_METADATA } from "../helpers/constants";
 import { useState } from "react";
+import MinimalScrollbar from "../components/MinimalScrollbar.tsx";
 
 function ProjectsPage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
@@ -26,7 +27,7 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col p-10 max-w-screen-xl mb-20">
+      <div className="flex flex-col p-10 max-w-screen-2xl mb-20">
         {/* Project Filter Bar */}
         <ProjectFilterBar
           selectedTag={selectedTag}
@@ -40,6 +41,14 @@ function ProjectsPage() {
           <ProjectList projects={filteredProjects} />
         )}
       </div>
+
+      {/* Minimal custom scrollbar */}
+      <MinimalScrollbar
+        right={12}
+        trackVH={0.75}
+        minThumb={36}
+        hideWhenNoScroll={true}
+      />
     </div>
   );
 }

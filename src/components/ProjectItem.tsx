@@ -29,16 +29,26 @@ function ProjectItem(props: ProjectTileProps) {
       >
         {props.number}
       </motion.span>
-      <img
-        src={props.project.thumbnail}
-        alt={`Thumbnail for ${props.number}`}
-        className="w-[100%] h-40 object-cover cursor-pointer shadow-md transition-all duration-500 hover:scale-125"
+      <video
+        className="w-[100%] aspect-[2/1] object-cover cursor-pointer shadow-md transition-all duration-500 hover:scale-125"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={props.project.thumbnail} // optional
+        role="img"
+        aria-label={`Thumbnail for ${props.number}`}
         onClick={() => {
           navigate(`/projects/${props.project.slug}`);
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-      />
+      >
+        <source src={props.project.animated_thumbnail} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <motion.span
         className="text-xl font-medium lowercase text-left -z-10"
         variants={states}

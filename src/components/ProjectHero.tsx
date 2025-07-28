@@ -1,38 +1,25 @@
-import { useState } from "react";
 import { useCursorContext } from "../helpers/CursorContext";
 import { ProjectHeroProps } from "../helpers/constants";
+import MinimalScrollbar from "./MinimalScrollbar";
 
 function ProjectHero({ project }: ProjectHeroProps) {
   const { setCursorHover } = useCursorContext();
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <>
-      {project.thumbnail && (
-        <div
-          className="relative w-full mb-10 select-none cursor-none"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+      {project.animated_thumbnail && (
+        <video
+          className="w-full object-cover rounded-md shadow-xl mb-10"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={project.thumbnail} // optional fallback image
         >
-          <img
-            src={
-              isHovered && project.animated_thumbnail
-                ? project.animated_thumbnail
-                : project.thumbnail
-            }
-            alt={`${project.title} Thumbnail`}
-            className="w-full object-cover rounded-md shadow-xl"
-            style={{
-              transform: isHovered ? "scale(1)" : "scale(1)",
-              transition: "transform 1s ease",
-            }}
-          />
-          <div className="absolute text-center inset-0 flex items-center rounded-md justify-center bg-black  bg-opacity-50 transition-opacity hover:opacity-0 duration-1000 ">
-            <h2 className="text-5xl uppercase font-bold text-white md:text-7xl lg:text-8xl">
-              {project.title}
-            </h2>
-          </div>
-        </div>
+          <source src={project.animated_thumbnail} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       )}
 
       {/* Description Text Box */}
@@ -76,6 +63,14 @@ function ProjectHero({ project }: ProjectHeroProps) {
           </div>
         )}
       </div>
+
+      {/* Minimal custom scrollbar */}
+      <MinimalScrollbar
+        right={12}
+        trackVH={0.75}
+        minThumb={36}
+        hideWhenNoScroll={true}
+      />
     </>
   );
 }
