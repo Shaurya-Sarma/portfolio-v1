@@ -53,7 +53,7 @@ export const PROJECT_METADATA = {
   lattice_configurator: {
     title: "Immersive XR Lattice Configurator",
     description:
-      "A research project that explores how immersive technologies can transform Additive Manufacturing (AM) workflows through interactive, haptic simulations of compressible lattice structures via virtual reality. As opposed to the traditional process of printing and testing lattices manually, this project explores a digital alternative: a real-time XR environment that allows users to generate lattice structures procedurally, manipulate parameters dynamically, and feel their mechanical response through SenseGlove Nova 2 haptic gloves",
+      "A research project that explores how immersive technologies can transform Additive Manufacturing (AM) workflows through interactive, haptic simulations of compressible lattice structures via virtual reality. As opposed to the traditional process of printing and testing lattices manually, this project explores a digital alternative: a real-time XR environment that allows users to generate lattice structures procedurally, manipulate parameters dynamically, and feel their mechanical response through SenseGlove Nova 2 haptic gloves.",
     skills: "Unity, VR, C#, Blender, Python, SenseGlove Nova 2 SDK",
     roles: "Researcher, Developer",
     type: "Research Project",

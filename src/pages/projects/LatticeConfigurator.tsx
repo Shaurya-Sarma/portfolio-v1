@@ -64,24 +64,15 @@ const LatticeConfigurator: React.FC<{ project: Project }> = ({ project }) => {
           ></iframe>
           <h5>Conclusion</h5>
           <p>
-            Working abroad on this project allowed me to engage with research
-            topics beyond the scope of my experience in the United States. It
-            was a unique opportunity to collaborate with international
-            researchers, gain exposure to advanced additive manufacturing
-            technologies, and contribute to the development of XR tools for
-            engineering applications. Alongside my work, I also took an A1
-            German course, which enhanced my communication and language skills
-            in a professional context.
-          </p>
-          <p>
-            Before this project, I had limited knowledge of additive
-            manufacturing. However, through this experience, I not only deepened
-            my understanding of the field and related mechanical engineering
-            topics but also discovered innovative ways XR technology can be
-            applied within this domain. This international experience provided
-            valuable insight into the intersection of XR, engineering, and
-            emerging technologies while setting me up for any future
-            international research or work opportunties with computer graphics.
+            Working on this project exposed me to topics beyond the scope of my
+            experience in the United States. It was a unique opportunity to
+            collaborate with international researchers while also learning about
+            the field of additive manufacturing (AM) and potential XR
+            applications. Alongside my work, I also passed an A1 German course,
+            which strengthened my communication and foreign language skills in a
+            professional context. I believe this experience would provide a
+            solid foundation for any future research or work opportunities
+            abroad.
           </p>
         </div>
       </main>
