@@ -7,6 +7,13 @@ function ProjectHero({ project }: ProjectHeroProps) {
 
   return (
     <>
+      {/* Project Title */}
+      <div className="flex justify-between text-xl md:text-2xl lowercase font-semibold mb-3 sm:mb-6 ">
+        <span className="text-left">{project.title}</span>
+        {/* <span className="text-right">{project.date}</span> */}
+      </div>
+
+      {/* Project Thumbnail */}
       {project.animated_thumbnail && (
         <video
           className="w-full object-cover rounded-md shadow-xl mb-10"

@@ -5,18 +5,8 @@ export const HOME_BIO1 =
 export const HOME_BIO2 =
   "Creative coding meets immersive digital experiences — that's my sweet spot. I'm passionate about combining technology and art, exploring areas like mixed reality, 3D graphics, and interactive experiences.";
 
-// NavigationBar.tsx
-export const NAVIGATION_HOME_LABEL = "Home";
-export const NAVIGATION_WORK_LABEL = "My Work";
-export const NAVIGATION_CONTACT_LABEL = "Contact Me";
-
 // ProjectsPage.tsx
-
-export const PROJECT_FILTER_HEADERS = [
-  "Software Dev",
-  "Computer Graphics",
-  "3d Renders",
-];
+export const PROJECT_FILTER_HEADERS = ["Software Dev", "Computer Graphics"];
 
 export type ProjectKey = keyof typeof PROJECT_METADATA;
 

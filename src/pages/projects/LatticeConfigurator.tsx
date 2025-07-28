@@ -4,7 +4,7 @@ import { Project } from "../../helpers/constants";
 
 const LatticeConfigurator: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-slate-50 min-h-screen w-full">
+    <div className="bg-[#fcfaf4] min-h-screen w-full">
       <NavigationBar />
 
       {/* Project Breakdown */}

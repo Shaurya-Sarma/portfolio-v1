@@ -6,11 +6,11 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const PennPlace: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-slate-50 min-h-screen w-full">
+    <div className="bg-[#fcfaf4] min-h-screen w-full">
       <NavigationBar />
 
       {/* Project Breakdown */}
-      <main className="max-w-screen-lg mx-auto pt-32 px-8 relative">
+      <main className="max-w-screen-lg mx-auto px-8 pt-20 relative">
         <ProjectHero project={project} />
 
         {/* Custom Content */}

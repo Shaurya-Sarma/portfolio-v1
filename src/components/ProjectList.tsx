@@ -42,7 +42,7 @@ function ProjectList(props: ProjectListProps) {
   };
 
   return (
-    <div className="flex flex-row justify-center mt-10 mb-20">
+    <div className="flex flex-row justify-center mt-6 mb-20">
       <ul
         className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-y-20 lg:gap-y-30 gap-x-20 `}
       >

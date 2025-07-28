@@ -6,7 +6,7 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Echo: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-slate-50 min-h-screen w-full">
+    <div className="bg-[#fcfaf4] min-h-screen w-full">
       <NavigationBar />
 
       {/* Project Breakdown */}

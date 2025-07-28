@@ -50,7 +50,7 @@ function Particles(props: { smallCount: number; bigCount: number }) {
         size: 0.005,
         map: circle,
         transparent: true,
-        color: "black",
+        color: "#1c1c1c",
         // blending: THREE.AdditiveBlending,
       }),
     []
@@ -90,7 +90,7 @@ function Particles(props: { smallCount: number; bigCount: number }) {
         size: 0.025 + Math.random() * 0.015,
         map: circle,
         transparent: true,
-        color: "black",
+        color: "#1c1c1c",
         // blending: THREE.AdditiveBlending,
       }),
     []

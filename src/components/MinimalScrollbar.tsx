@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 
 interface MinimalScrollbarProps {
-  right?: number; // px offset from the right edge
-  trackVH?: number; // track height as a fraction of viewport height (0–1)
-  minThumb?: number; // minimum thumb height (px)
-  hideWhenNoScroll?: boolean; // hide if there's nothing to scroll
+  right?: number;
+  trackVH?: number;
+  minThumb?: number;
+  hideWhenNoScroll?: boolean;
 }
 
 export default function MinimalScrollbar({
@@ -16,10 +16,11 @@ export default function MinimalScrollbar({
   const trackRef = useRef<HTMLDivElement>(null);
 
   // SCROLL STATE
-  const [progress, setProgress] = useState(0); // 0..1, how far down the page
-  const [thumbH, setThumbH] = useState(minThumb); // current thumb height (px)
-  const [trackH, setTrackH] = useState(0); // current track height (px)
-  const [visible, setVisible] = useState(true); // render or not
+  const [progress, setProgress] = useState(0);
+  const [thumbH, setThumbH] = useState(minThumb);
+  const [trackH, setTrackH] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [adjustedRight, setAdjustedRight] = useState(right);
 
   // DRAG STATE
   const [dragging, setDragging] = useState(false);
@@ -32,15 +33,12 @@ export default function MinimalScrollbar({
     const doc = document.documentElement;
     const scrollable = doc.scrollHeight - window.innerHeight;
 
-    // how far we are in the scroll (0..1)
     const p = scrollable > 0 ? window.scrollY / scrollable : 0;
     setProgress(Math.min(1, Math.max(0, p)));
 
-    // track height based on viewport fraction
     const tH = Math.floor(window.innerHeight * trackVH);
     setTrackH(tH);
 
-    // thumb height based on content length, but never below minThumb
     const h = Math.max(minThumb, (window.innerHeight / doc.scrollHeight) * tH);
     setThumbH(h);
 
@@ -48,17 +46,21 @@ export default function MinimalScrollbar({
   };
 
   useEffect(() => {
-    recalc();
+    const handleResize = () => {
+      recalc();
+      setAdjustedRight(window.innerWidth < 768 ? right - 4 : right); // change threshold if needed
+    };
+
+    handleResize(); // initial run
     window.addEventListener("scroll", recalc, { passive: true });
-    window.addEventListener("resize", recalc);
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", recalc);
-      window.removeEventListener("resize", recalc);
+      window.removeEventListener("resize", handleResize);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Drag handlers (Pointer Events => works for mouse + touch)
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
       if (!dragging || !trackRef.current) return;
@@ -104,10 +106,8 @@ export default function MinimalScrollbar({
   const onThumbPointerDown = (e: React.PointerEvent) => {
     if (!trackRef.current) return;
     e.preventDefault();
-
     const usable = trackH - thumbH;
     const currentThumbTop = usable * progress;
-
     dragStart.current = {
       y: e.clientY,
       thumbTop: currentThumbTop,
@@ -122,7 +122,7 @@ export default function MinimalScrollbar({
 
   return (
     <div
-      style={{ right }}
+      style={{ right: adjustedRight }}
       className="fixed top-1/2 -translate-y-1/2 z-50 select-none"
     >
       <div

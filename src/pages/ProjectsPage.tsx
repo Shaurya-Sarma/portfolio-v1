@@ -6,6 +6,7 @@ import ProjectFilterBar from "../components/ProjectFilterBar";
 import { PROJECT_METADATA } from "../helpers/constants";
 import { useState } from "react";
 import MinimalScrollbar from "../components/MinimalScrollbar.tsx";
+import NavigationBar from "../components/NavigationBar.tsx";
 
 function ProjectsPage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
@@ -20,6 +21,7 @@ function ProjectsPage() {
 
   return (
     <div className="flex flex-row justify-center">
+      <NavigationBar />
       {/* Animated Particle Background */}
       <div className="fixed h-full w-full -z-50">
         <Canvas>
@@ -27,7 +29,7 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col p-10 max-w-screen-xl mb-20">
+      <div className="flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
         {/* Project Filter Bar */}
         <ProjectFilterBar
           selectedTag={selectedTag}
