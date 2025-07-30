@@ -14,6 +14,7 @@ import NavigationBar from "../components/NavigationBar";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Footer from "../components/Footer";
+import MinimalScrollbar from "../components/MinimalScrollbar";
 
 function HomePage() {
   const [canvasSize, setCanvasSize] = useState({ size: 0 });
@@ -45,8 +46,14 @@ function HomePage() {
           </Canvas>
         </div>
 
+        <MinimalScrollbar
+          right={12}
+          trackVH={0.75}
+          minThumb={36}
+          hideWhenNoScroll={true}
+        />
         <main className="flex flex-col w-full h-full items-center justify-center">
-          <div className="flex flex-col-reverse justify-center gap-2 items-center h-full m-auto max-w-screen-xl md:flex-row md:gap-0 lg:gap-5">
+          <div className="flex flex-col-reverse justify-center mt-12 gap-2 items-center h-full m-auto max-w-screen-xl md:flex-row md:gap-0 lg:gap-5">
             {/* Hero Text Content */}
             <div className="flex flex-col gap-4 text-center md:text-left justify-center w-[80%] px-0 md:px-8 md:w-[55%] md:mt-0 lg:gap-8">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold ">
