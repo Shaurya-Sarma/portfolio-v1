@@ -6,6 +6,7 @@ function StickyCursor() {
   const mouse = { x: useMotionValue(0), y: useMotionValue(0) };
   const { cursorHover } = useCursorContext();
   const [hidden, setHidden] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const cursorSize = cursorHover ? 60 : 16;
 
@@ -30,34 +31,44 @@ function StickyCursor() {
   };
 
   useEffect(() => {
-    const HIDE_SELECTOR = "img, video, iframe"; // extend with [data-hide-cursor] to mark specific elements inside of all img/video/iframe tags
-    const onPointerOver = (e: PointerEvent) => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 640);
+    };
+
+    checkScreenSize(); // initial check
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (isSmallScreen) return;
+
+    const HIDE_SELECTOR = "img, video, iframe, [data-hide-cursor]";
+
+    const onPointerMove = (e: PointerEvent) => {
+      // Update position
+      mouse.x.set(e.clientX - cursorSize / 2);
+      mouse.y.set(e.clientY - cursorSize / 2);
+
+      // Check if hovering over media elements
       const el = e.target as HTMLElement | null;
       if (el && (el.matches(HIDE_SELECTOR) || el.closest(HIDE_SELECTOR))) {
         setHidden(true);
+      } else {
+        setHidden(false);
       }
     };
-    const onPointerOut = (e: PointerEvent) => {
-      const el = e.relatedTarget as HTMLElement | null;
-      // If we left to another media element, keep it hidden
-      const stillOverMedia =
-        el && (el.matches(HIDE_SELECTOR) || el.closest(HIDE_SELECTOR));
-      setHidden(!!stillOverMedia);
-      if (!el) setHidden(false); // left the window
-    };
 
-    window.addEventListener("pointermove", handleMouseMove);
+    window.addEventListener("pointermove", onPointerMove);
     window.addEventListener("click", handleMouseClick);
-    window.addEventListener("pointerover", onPointerOver);
-    window.addEventListener("pointerout", onPointerOut);
 
     return () => {
-      window.removeEventListener("pointermove", handleMouseMove);
+      window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("click", handleMouseClick);
-      window.removeEventListener("pointerover", onPointerOver);
-      window.removeEventListener("pointerout", onPointerOut);
     };
-  }, [cursorSize]);
+  }, [cursorSize, isSmallScreen]);
+
+  if (isSmallScreen) return null;
 
   return (
     <motion.div
@@ -69,7 +80,7 @@ function StickyCursor() {
       animate={{
         width: cursorSize,
         height: cursorSize,
-        opacity: hidden ? 0 : 1, // hide when over img/video
+        opacity: hidden ? 0 : 1,
       }}
       transition={{ opacity: { duration: 0.15 } }}
     />

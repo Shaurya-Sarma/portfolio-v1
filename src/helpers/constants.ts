@@ -136,22 +136,110 @@ export const PROJECT_METADATA = {
   },
 } as const;
 
-const IMAGES = [
-  "artie_models.png",
-  "audio_visualizer_01.jpg",
-  "audio_visualizer_02.jpg",
-  "beyond_the_wall.jpg",
-  "blue_moon.png",
-  "city_night_01.png",
-  "city_night_02.png",
-  "classroom_01.jpg",
-  "classroom_02.jpg",
-  "crimson_forest.jpg",
-  "false_god_01.png",
-  "false_god_02.png",
-  "midsummer_dream.png",
-  "resting_place.jpg",
-  "sand_dunes.png",
+export const CREATIVE_METADATA = [
+  {
+    url: "artie_models.png",
+    tags: ["3D"],
+    title: "Artie Models",
+  },
+  {
+    url: "audio_visualizer_01.jpg",
+    tags: ["3D"],
+    title: "Audio Visualizer I",
+  },
+  {
+    url: "audio_visualizer_02.jpg",
+    tags: ["3D"],
+    title: "Audio Visualizer II",
+  },
+  {
+    url: "beyond_the_wall.jpg",
+    tags: ["3D"],
+    title: "Beyond the Wall",
+  },
+  {
+    url: "blue_moon.png",
+    tags: ["3D"],
+    title: "Blue Moon",
+  },
+  {
+    url: "city_night_01.png",
+    tags: ["3D"],
+    title: "City at Night I",
+  },
+  {
+    url: "city_night_02.png",
+    tags: ["3D"],
+    title: "City at Night II",
+  },
+  {
+    url: "classroom_01.jpg",
+    tags: ["3D"],
+    title: "Classroom I",
+  },
+  {
+    url: "classroom_02.jpg",
+    tags: ["3D"],
+    title: "Classroom II",
+  },
+  {
+    url: "crimson_forest.jpg",
+    tags: ["3D"],
+    title: "Crimson Forest",
+  },
+  {
+    url: "false_god_01.png",
+    tags: ["3D"],
+    title: "False God I",
+  },
+  {
+    url: "false_god_02.png",
+    tags: ["3D"],
+    title: "False God II",
+  },
+  {
+    url: "midsummer_dream.png",
+    tags: ["3D"],
+    title: "Midsummer Dream",
+  },
+  {
+    url: "resting_place.jpg",
+    tags: ["3D"],
+    title: "Resting Place",
+  },
+  {
+    url: "sand_dunes.png",
+    tags: ["3D"],
+    title: "Sand Dunes",
+  },
+  {
+    url: "sand_dunes.png",
+    tags: ["3D"],
+    title: "Sand Dunes",
+  },
+  {
+    url: "horn_brucke.jpg",
+    tags: ["camera"],
+    title: "Horn Brücke",
+  },
+  {
+    url: "mallorca_sunset.png",
+    tags: ["camera"],
+    title: "Mallorca Sunset",
+  },
+  {
+    url: "ramen.jpg",
+    tags: ["camera"],
+    title: "Ramen",
+  },
+  {
+    url: "night_street.jpg",
+    tags: ["camera"],
+    title: "Night Street",
+  },
+  {
+    url: "telephone_pole.jpg",
+    tags: ["camera"],
+    title: '"Do You Love Her?" Telephone',
+  },
 ];
-
-export const ART_IMAGES = IMAGES.map((fileName) => `/images/art/${fileName}`);

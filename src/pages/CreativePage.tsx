@@ -1,22 +1,41 @@
 import { Canvas } from "@react-three/fiber";
 import Particles from "../components/Particles";
-import MinimalScrollbar from "../components/MinimalScrollbar.tsx";
 import NavigationBar from "../components/NavigationBar.tsx";
+import MinimalScrollbar from "../components/MinimalScrollbar.tsx";
+import { CREATIVE_METADATA } from "../helpers/constants";
+import { useState } from "react";
+import ArtList from "../components/ArtList.tsx";
+import ArtFilterBar from "../components/ArtFilterBar.tsx";
 
 function CreativePage() {
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const filteredImages = CREATIVE_METADATA.filter((item) => {
+    return (
+      selectedTag === null ||
+      item.tags.some((tag) => tag.toLowerCase().includes(selectedTag))
+    );
+  });
+
   return (
     <div className="flex flex-row justify-center">
       <NavigationBar />
-      {/* Animated Particle Background */}
+
       <div className="fixed h-full w-full -z-50">
         <Canvas>
-          <Particles smallCount={10000} bigCount={50} />
+          <Particles smallCount={8000} bigCount={30} />
         </Canvas>
       </div>
 
-      <div className="flex flex-col p-10 max-w-screen-xl mt-8 sm:mt-12 mb-20"></div>
+      <div className="w-full flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
+        <ArtFilterBar
+          selectedTag={selectedTag}
+          setSelectedTag={setSelectedTag}
+        />
 
-      {/* Minimal custom scrollbar */}
+        <ArtList filteredImages={filteredImages} />
+      </div>
+
       <MinimalScrollbar
         right={12}
         trackVH={0.75}

@@ -1,28 +1,21 @@
 import { useCursorContext } from "../helpers/CursorContext";
 
-interface ProjectFilterBarProps {
+interface ArtFilterBarProps {
   setSelectedTag: (tag: string | null) => void;
   selectedTag: string | null;
 }
 
-function ProjectFilterBar({
-  setSelectedTag,
-  selectedTag,
-}: ProjectFilterBarProps) {
+function ArtFilterBar({ setSelectedTag, selectedTag }: ArtFilterBarProps) {
   const { setCursorHover } = useCursorContext();
 
   const tags = [
-    {
-      full: "Software Development",
-      short: "Software",
-      id: "software dev",
-    },
-    { full: "Computer Graphics", short: "Graphics", id: "computer graphics" },
+    { full: "3D Renders", short: "3d", id: "3d" },
+    { full: "Photography", short: "camera", id: "camera" },
   ];
 
   return (
-    <div className="flex flex-col gap-2 sm:flex-row justify-between items-center z-10">
-      <h2 className="text-lg font-medium lowercase">My Portfolio:</h2>
+    <div className="flex flex-col gap-2 sm:flex-row justify-between items-center z-10 mb-6">
+      <h2 className="text-lg font-medium lowercase">some cool stuff:</h2>
 
       <div className="flex flex-row gap-2 md:gap-5">
         {tags.map(({ full, short, id }) => {
@@ -51,4 +44,4 @@ function ProjectFilterBar({
   );
 }
 
-export default ProjectFilterBar;
+export default ArtFilterBar;

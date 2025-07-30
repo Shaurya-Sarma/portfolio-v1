@@ -8,7 +8,7 @@ interface MinimalScrollbarProps {
 }
 
 export default function MinimalScrollbar({
-  right = 24,
+  right = 12,
   trackVH = 0.75,
   minThumb = 40,
   hideWhenNoScroll = true,
@@ -48,7 +48,7 @@ export default function MinimalScrollbar({
   useEffect(() => {
     const handleResize = () => {
       recalc();
-      setAdjustedRight(window.innerWidth < 768 ? right - 4 : right); // change threshold if needed
+      setAdjustedRight(window.innerWidth < 768 ? right - 8 : right); // change threshold if needed
     };
 
     handleResize(); // initial run
@@ -129,7 +129,7 @@ export default function MinimalScrollbar({
         ref={trackRef}
         onClick={onTrackClick}
         style={{ height: trackH }}
-        className="relative w-[8px] transition-colors rounded-full cursor-pointer"
+        className="relative w-[4px] sm:w-[8px] transition-colors rounded-full cursor-pointer"
       >
         <div
           onPointerDown={onThumbPointerDown}

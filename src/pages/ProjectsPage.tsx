@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import Particles from "../components/Particles";
 import ProjectList from "../components/ProjectList";
-import ArtList from "../components/ArtList.tsx"; // Import the ArtList component
 import ProjectFilterBar from "../components/ProjectFilterBar";
 import { PROJECT_METADATA } from "../helpers/constants";
 import { useState } from "react";
@@ -29,19 +28,14 @@ function ProjectsPage() {
         </Canvas>
       </div>
 
-      <div className="flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
+      <div className="w-full flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
         {/* Project Filter Bar */}
         <ProjectFilterBar
           selectedTag={selectedTag}
           setSelectedTag={setSelectedTag}
         />
 
-        {/* Render either Project List or Art List based on selected tag*/}
-        {selectedTag === "3d renders" ? (
-          <ArtList />
-        ) : (
-          <ProjectList projects={filteredProjects} />
-        )}
+        <ProjectList projects={filteredProjects} />
       </div>
 
       {/* Minimal custom scrollbar */}

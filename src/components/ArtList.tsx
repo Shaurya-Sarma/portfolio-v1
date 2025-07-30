@@ -1,51 +1,45 @@
-import { ART_IMAGES } from "../helpers/constants";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
-function ArtList() {
-  // const [selectedImage, setSelectedImage] = useState<string>();
-  // const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-  // const openModal = (url: string) => {
-  //   setIsModalOpen(true);
-  //   setSelectedImage(url);
-  // };
-
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  //   setSelectedImage("");
-  // };
-
+export default function ArtList({ filteredImages }: { filteredImages: any[] }) {
   return (
-    <div className="w-full flex flex-col items-center mt-10 mb-20">
-      {/* Gallery */}
-      <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {ART_IMAGES.map((src, index) => (
-          <li key={index} className="gallery-item">
+    <ResponsiveMasonry
+      columnsCountBreakPoints={{
+        350: 1,
+        640: 2,
+        768: 2,
+        // 1024: 3,
+      }}
+    >
+      <Masonry gutter="1rem">
+        {filteredImages.map((item: any, index: number) => (
+          <div
+            key={item.url}
+            className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+            data-hide-cursor
+          >
             <img
-              src={src}
-              alt={`Art ${index + 1}`}
-              className="h-full object-cover select-none rounded-sm shadow-md cursor-pointer"
-              // onClick={() => openModal(src)}
+              src={`/images/art/${item.url}`}
+              alt={item.title}
+              className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110"
+              loading="lazy"
             />
-          </li>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="absolute bottom-0 left-0 p-4 text-white font-semibold text-md sm:text-lg">
+                {item.title}
+              </h3>
+              <span className="absolute bottom-0 right-0 p-4 text-white font-semibold text-md sm:text-lg italic">
+                {(index + 1).toString().padStart(3, "0")}
+              </span>
+            </div>
+            <div
+              className="absolute inset-0 cursor-pointer"
+              onClick={() => {
+                console.log(`Clicked image: ${item.title}`);
+              }}
+            />
+          </div>
         ))}
-      </ul>
-      {/* Image Modal  */}
-      {/* <Modal
-        isOpen={isModalOpen}
-        // onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        // style={customStyles}
-        className={""}
-        contentLabel="Example Modal"
-      >
-        <img
-          src={selectedImage}
-          alt="thumbnail"
-          className="w-10/12 m-auto align-middle"
-        />
-      </Modal> */}
-    </div>
+      </Masonry>
+    </ResponsiveMasonry>
   );
 }
-
-export default ArtList;

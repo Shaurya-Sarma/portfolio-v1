@@ -12,11 +12,14 @@ function NavigationBar() {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full flex justify-between items-center px-8 py-6 z-10 select-none">
-      <div className="text-md md:text-lg font-bold uppercase">
+    <div className="absolute top-0 left-0 w-full flex flex-col sm:flex-row justify-center sm:justify-between items-center px-8 py-6 z-10 select-none">
+      {/* Title visible only on small screens and up */}
+      <div className="hidden sm:block text-md md:text-lg font-bold uppercase">
         SHAURYA SARMA
       </div>
-      <div className="flex gap-4 md:gap-6 ">
+
+      {/* Nav links — center on small screens, far right on larger */}
+      <div className="flex gap-4 md:gap-6 justify-center">
         {navLinks.map(({ to, label }) => {
           const isActive = location.pathname === to;
           return (
