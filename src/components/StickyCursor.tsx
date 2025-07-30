@@ -10,10 +10,10 @@ function StickyCursor() {
 
   const cursorSize = cursorHover ? 60 : 16;
 
-  const handleMouseMove = (e: { clientX: number; clientY: number }) => {
-    mouse.x.set(e.clientX - cursorSize / 2);
-    mouse.y.set(e.clientY - cursorSize / 2);
-  };
+  // const handleMouseMove = (e: { clientX: number; clientY: number }) => {
+  //   mouse.x.set(e.clientX - cursorSize / 2);
+  //   mouse.y.set(e.clientY - cursorSize / 2);
+  // };
 
   const handleMouseClick = (e: { clientX: number; clientY: number }) => {
     const ring = document.createElement("div");
@@ -43,7 +43,7 @@ function StickyCursor() {
   useEffect(() => {
     if (isSmallScreen) return;
 
-    const HIDE_SELECTOR = "img, video, iframe, [data-hide-cursor]";
+    const HIDE_SELECTOR = "img, video, iframe, [data-hide-cursor]"; // add data-hide-cursor selector to the properties of any elements that should hide the cursor
 
     const onPointerMove = (e: PointerEvent) => {
       // Update position

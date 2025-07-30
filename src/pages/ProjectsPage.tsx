@@ -1,14 +1,19 @@
 import { Canvas } from "@react-three/fiber";
 import Particles from "../components/Particles";
 import ProjectList from "../components/ProjectList";
-import ProjectFilterBar from "../components/ProjectFilterBar";
 import { PROJECT_METADATA } from "../helpers/constants";
 import { useState } from "react";
 import MinimalScrollbar from "../components/MinimalScrollbar.tsx";
 import NavigationBar from "../components/NavigationBar.tsx";
+import FilterBar from "../components/FilterBar.tsx";
 
 function ProjectsPage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const projectTags = [
+    { full: "Software Development", short: "Software", id: "software dev" },
+    { full: "Computer Graphics", short: "Graphics", id: "computer graphics" },
+  ];
 
   // Filter the projects based on selected tag
   const filteredProjects = Object.values(PROJECT_METADATA).filter((project) => {
@@ -30,7 +35,9 @@ function ProjectsPage() {
 
       <div className="w-full flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
         {/* Project Filter Bar */}
-        <ProjectFilterBar
+        <FilterBar
+          header="my portfolio:"
+          tags={projectTags}
           selectedTag={selectedTag}
           setSelectedTag={setSelectedTag}
         />

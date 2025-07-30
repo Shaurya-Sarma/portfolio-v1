@@ -5,10 +5,15 @@ import MinimalScrollbar from "../components/MinimalScrollbar.tsx";
 import { CREATIVE_METADATA } from "../helpers/constants";
 import { useState } from "react";
 import ArtList from "../components/ArtList.tsx";
-import ArtFilterBar from "../components/ArtFilterBar.tsx";
+import FilterBar from "../components/FilterBar.tsx";
 
 function CreativePage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const creativeTags = [
+    { full: "3D Renders", short: "3d", id: "3d" },
+    { full: "Photography", short: "camera", id: "camera" },
+  ];
 
   const filteredImages = CREATIVE_METADATA.filter((item) => {
     return (
@@ -28,7 +33,10 @@ function CreativePage() {
       </div>
 
       <div className="w-full flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
-        <ArtFilterBar
+        {/* Art Filter Bar */}
+        <FilterBar
+          header="some cool stuff:"
+          tags={creativeTags}
           selectedTag={selectedTag}
           setSelectedTag={setSelectedTag}
         />
