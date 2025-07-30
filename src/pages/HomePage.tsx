@@ -13,19 +13,18 @@ import {
 import NavigationBar from "../components/NavigationBar";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import SocialButtonBar from "../components/SocialButtonBar";
 import Footer from "../components/Footer";
 
 function HomePage() {
   const [canvasSize, setCanvasSize] = useState({ size: 0 });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isDesktopOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   // update canvas size based on screen width and media query
   useEffect(() => {
     const updateSize = () => {
       const size = Math.min(
-        window.innerWidth * (isTabletOrMobile ? 0.75 : 0.4),
-        isTabletOrMobile ? 1200 : 800 // limit the size to a maximum
+        window.innerWidth * (isDesktopOrMobile ? 0.7 : 0.4),
+        isDesktopOrMobile ? 1000 : 700 // limit the size to a maximum
       );
       setCanvasSize({ size });
     };
@@ -33,7 +32,7 @@ function HomePage() {
     updateSize(); // Initialize size
     window.addEventListener("resize", updateSize);
     return () => window.removeEventListener("resize", updateSize);
-  }, [isTabletOrMobile]);
+  }, [isDesktopOrMobile]);
 
   return (
     <>
@@ -49,11 +48,11 @@ function HomePage() {
         <main className="flex flex-col w-full h-full items-center justify-center">
           <div className="flex flex-col-reverse justify-center gap-2 items-center h-full m-auto max-w-screen-xl md:flex-row md:gap-0 lg:gap-5">
             {/* Hero Text Content */}
-            <div className="flex flex-col gap-4 text-center sm:text-left justify-center w-[80%] px-0 md:px-8 md:w-[55%] md:mt-0 lg:gap-8">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold ">
+            <div className="flex flex-col gap-4 text-center md:text-left justify-center w-[80%] px-0 md:px-8 md:w-[55%] md:mt-0 lg:gap-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold ">
                 Hey, I'm Shaurya
               </h1>
-              <h2 className="text-sm sm:text-md md:text-lg lg:text-xl font-normal">
+              <h2 className="text-md sm:text-lg md:text-xl font-normal">
                 I'm a student at the University of Pennsylvania, where I study{" "}
                 <a
                   href="https://cg.cis.upenn.edu/dmd.html"
@@ -66,10 +65,10 @@ function HomePage() {
                 and computer science. I'm into all things related to animation,
                 graphics, XR, AI, 3D web dev, and interactive experiences.
               </h2>
-              <h2 className="text-sm sm:text-md md:text-lg lg:text-xl font-normal">
+              <h2 className="text-md sm:text-lg md:text-xl font-normal">
                 Please feel free to check out my work and get in touch!
               </h2>
-              <span className="text-sm sm:text-md md:text-lg lg:text-xl font-normal ">
+              <span className="text-md sm:text-lg md:text-xl font-normal">
                 Let's Connect:{" "}
                 <a
                   href="mailto:shaux@upenn.edu"
@@ -90,7 +89,7 @@ function HomePage() {
             </div>
 
             {/* 3D Model Demo */}
-            <div className="mb-2 md:mb-0">
+            <div className="mb-2 sm:mb-0">
               <Canvas
                 style={{
                   width: canvasSize.size,
