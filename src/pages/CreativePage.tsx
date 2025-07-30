@@ -6,6 +6,7 @@ import { CREATIVE_METADATA } from "../helpers/constants";
 import { useState } from "react";
 import ArtList from "../components/ArtList.tsx";
 import FilterBar from "../components/FilterBar.tsx";
+import Footer from "../components/Footer.tsx";
 
 function CreativePage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
@@ -23,34 +24,37 @@ function CreativePage() {
   });
 
   return (
-    <div className="flex flex-row justify-center">
-      <NavigationBar />
+    <>
+      <div className="flex flex-row justify-center">
+        <NavigationBar />
 
-      <div className="fixed h-full w-full -z-50">
-        <Canvas>
-          <Particles smallCount={8000} bigCount={30} />
-        </Canvas>
-      </div>
+        <div className="fixed h-full w-full -z-50">
+          <Canvas>
+            <Particles smallCount={8000} bigCount={30} />
+          </Canvas>
+        </div>
 
-      <div className="w-full flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
-        {/* Art Filter Bar */}
-        <FilterBar
-          header="some cool stuff:"
-          tags={creativeTags}
-          selectedTag={selectedTag}
-          setSelectedTag={setSelectedTag}
+        <div className="w-full flex flex-col px-8 pt-8  max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
+          {/* Art Filter Bar */}
+          <FilterBar
+            header="some cool stuff:"
+            tags={creativeTags}
+            selectedTag={selectedTag}
+            setSelectedTag={setSelectedTag}
+          />
+
+          <ArtList filteredImages={filteredImages} />
+        </div>
+
+        <MinimalScrollbar
+          right={12}
+          trackVH={0.75}
+          minThumb={36}
+          hideWhenNoScroll={true}
         />
-
-        <ArtList filteredImages={filteredImages} />
       </div>
-
-      <MinimalScrollbar
-        right={12}
-        trackVH={0.75}
-        minThumb={36}
-        hideWhenNoScroll={true}
-      />
-    </div>
+      <Footer />
+    </>
   );
 }
 

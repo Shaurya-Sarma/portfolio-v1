@@ -6,6 +6,7 @@ import { useState } from "react";
 import MinimalScrollbar from "../components/MinimalScrollbar.tsx";
 import NavigationBar from "../components/NavigationBar.tsx";
 import FilterBar from "../components/FilterBar.tsx";
+import Footer from "../components/Footer.tsx";
 
 function ProjectsPage() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
@@ -24,35 +25,38 @@ function ProjectsPage() {
   });
 
   return (
-    <div className="flex flex-row justify-center">
-      <NavigationBar />
-      {/* Animated Particle Background */}
-      <div className="fixed h-full w-full -z-50">
-        <Canvas>
-          <Particles smallCount={10000} bigCount={50} />
-        </Canvas>
-      </div>
+    <>
+      <div className="flex flex-row justify-center">
+        <NavigationBar />
+        {/* Animated Particle Background */}
+        <div className="fixed h-full w-full -z-50">
+          <Canvas>
+            <Particles smallCount={10000} bigCount={50} />
+          </Canvas>
+        </div>
 
-      <div className="w-full flex flex-col p-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
-        {/* Project Filter Bar */}
-        <FilterBar
-          header="my portfolio:"
-          tags={projectTags}
-          selectedTag={selectedTag}
-          setSelectedTag={setSelectedTag}
+        <div className="w-full flex flex-col px-8 pt-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
+          {/* Project Filter Bar */}
+          <FilterBar
+            header="my portfolio:"
+            tags={projectTags}
+            selectedTag={selectedTag}
+            setSelectedTag={setSelectedTag}
+          />
+
+          <ProjectList projects={filteredProjects} />
+        </div>
+
+        {/* Minimal custom scrollbar */}
+        <MinimalScrollbar
+          right={12}
+          trackVH={0.75}
+          minThumb={36}
+          hideWhenNoScroll={true}
         />
-
-        <ProjectList projects={filteredProjects} />
       </div>
-
-      {/* Minimal custom scrollbar */}
-      <MinimalScrollbar
-        right={12}
-        trackVH={0.75}
-        minThumb={36}
-        hideWhenNoScroll={true}
-      />
-    </div>
+      <Footer />
+    </>
   );
 }
 

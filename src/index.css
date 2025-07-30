@@ -100,7 +100,7 @@ body::-webkit-scrollbar,
   margin-bottom: 1.25rem;
 }
 
-.breakdown a {
+.breakdown a{
   color: #e99518;
   text-decoration: underline;
   font-weight: 600;
