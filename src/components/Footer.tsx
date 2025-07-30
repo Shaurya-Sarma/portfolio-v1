@@ -4,8 +4,8 @@ export default function Footer() {
   return (
     <footer
       className="
-        w-full max-w-screen-xl mx-auto px-4 pb-6
-        flex flex-col items-center text-center gap-3
+        w-full max-w-screen-xl mx-auto px-4 py-6
+        flex flex-col items-center text-center gap-2
       "
     >
       {/* Social Button Bar - always above */}

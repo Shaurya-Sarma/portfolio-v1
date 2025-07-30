@@ -35,7 +35,7 @@ function ProjectsPage() {
           </Canvas>
         </div>
 
-        <div className="w-full flex flex-col px-8 pt-8 max-w-screen-xl mt-12 sm:mt-14 sm:mb-20">
+        <div className="w-full flex flex-col px-8 pt-8 max-w-screen-xl mt-12 sm:mt-14 mb-0 md:mb-8">
           {/* Project Filter Bar */}
           <FilterBar
             header="my portfolio:"
