@@ -8,7 +8,7 @@ const LatticeConfigurator: React.FC<{ project: Project }> = ({ project }) => {
       <NavigationBar />
 
       {/* Project Breakdown */}
-      <main className="max-w-screen-lg mx-auto pt-32 px-8 relative">
+      <main className="max-w-screen-lg mx-auto pt-20 px-8 relative">
         <ProjectHero project={project} />
 
         {/* Custom Content */}

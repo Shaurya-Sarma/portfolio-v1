@@ -123,7 +123,7 @@ export const PROJECT_METADATA = {
     title: "Traveling Salesperson Problem",
     description:
       "An interactive visualization of the Traveling Salesperson Problem using a genetic algorithm called Neuroevolution of Augmenting Topologies (NEAT). Users can tweak the number of cities and salespeople to watch the algorithm evolve optimized routes over generations, simulating natural selection, mutations, and inheritance. This project combines optimization, AI, and neural network evolution to solve a classic problem in a visually engaging way.",
-    skills: "React Native, Typescript",
+    skills: "Javascript, p5.js",
     roles: "",
     type: "Web Experiment",
     thumbnail:

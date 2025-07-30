@@ -8,8 +8,8 @@ function ProjectHero({ project }: ProjectHeroProps) {
   return (
     <>
       {/* Project Title */}
-      <div className="flex justify-between text-xl md:text-2xl lowercase font-semibold mb-3 sm:mb-6 ">
-        <span className="text-left">{project.title}</span>
+      <div className="flex justify-center sm:justify-between text-lg sm:text-xl md:text-2xl lowercase font-semibold mb-3 sm:mb-6 ">
+        <span className="text-center whitespace-nowrap">{project.title}</span>
         {/* <span className="text-right">{project.date}</span> */}
       </div>
 
@@ -30,16 +30,16 @@ function ProjectHero({ project }: ProjectHeroProps) {
       )}
 
       {/* Description Text Box */}
-      <div className="mb-5">
-        <div className="flex flex-row justify-between mb-3">
-          <h4 className="text-lg uppercase font-semibold">Description</h4>
-          <span className="flex flex-row">
-            <h4 className="text-lg uppercase font-semibold text-black bg-[#F5B700] px-1 mr-2">
+      <div className="text-md sm:text-lg mb-5">
+        <div className="flex flex-col sm:flex-row justify-between mb-3">
+          <h4 className="uppercase font-semibold">Description</h4>
+          <span className="flex flex-row mt-1 sm:mt-0">
+            <h4 className=" uppercase font-semibold text-black bg-[#F5B700] px-1 mr-2">
               {project.type}
             </h4>
             {project.demo_link && (
               <h4
-                className="text-lg uppercase font-semibold border-l-2 border-black pl-2 cursor-pointer select-none z-10"
+                className="uppercase font-semibold border-l-2 border-black pl-2 cursor-pointer select-none z-10"
                 onMouseEnter={() => setCursorHover(true)}
                 onMouseLeave={() => setCursorHover(false)}
               >
@@ -54,19 +54,19 @@ function ProjectHero({ project }: ProjectHeroProps) {
             )}
           </span>
         </div>
-        <p className="text-lg font-medium">{project.description}</p>
+        <p className="font-medium">{project.description}</p>
       </div>
 
       {/* Skills and Roles Text Box */}
-      <div className="flex flex-col md:flex-row md:justify-between">
+      <div className="flex flex-col md:flex-row md:justify-between text-md sm:text-lg">
         <div className="mb-5">
-          <h4 className="text-lg uppercase font-semibold mb-3">Skills</h4>
-          <p className="text-lg font-medium">{project.skills}</p>
+          <h4 className="uppercase font-semibold mb-3">Skills</h4>
+          <p className="font-medium">{project.skills}</p>
         </div>
         {project.roles && (
           <div className="mb-5 ml-0 md:ml-5">
-            <h4 className="text-lg uppercase font-semibold mb-3">Roles</h4>
-            <p className="text-lg font-medium">{project.roles}</p>
+            <h4 className="uppercase font-semibold mb-3">Roles</h4>
+            <p className="font-medium">{project.roles}</p>
           </div>
         )}
       </div>

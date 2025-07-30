@@ -29,7 +29,7 @@ export default function SocialButtonBar() {
           target="_blank"
           data-hide-cursor
           rel="noopener noreferrer"
-          className="w-8 h-8 sm:w-10 sm:h-10  flex items-center justify-center rounded-full bg-[#f7b727] text-white text-md sm:text-lg transition-transform transform hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-[#e99518]"
+          className="w-8 h-8 sm:w-10 sm:h-10  flex items-center justify-center rounded-full bg-[#f7b727] text-white text-md sm:text-lg transition-transform transform hover:scale-110 hover:ring-2 hover:ring-offset-2 hover:ring-[#f7b727]"
         >
           {iconMap[id as keyof typeof iconMap]}
         </a>
