@@ -163,6 +163,16 @@ export const CREATIVE_METADATA = [
     title: "Blue Moon",
   },
   {
+    url: "dmeter.jpeg",
+    tags: ["3D"],
+    title: "Steampunk Divergence Meter",
+  },
+  {
+    url: "phonewave.jpeg",
+    tags: ["3D"],
+    title: "PhoneWave",
+  },
+  {
     url: "city_night_01.png",
     tags: ["3D"],
     title: "City at Night I",
