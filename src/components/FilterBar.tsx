@@ -19,8 +19,7 @@ function FilterBar({
 }: FilterBarProps) {
   return (
     <div className="w-full flex flex-col gap-2 sm:flex-row justify-between items-center z-10">
-      {/* <h2 className="text-lg font-medium uppercase">{header}</h2> */}
-      <span></span>
+      <h2 className="text-lg font-medium uppercase">{header}</h2>
 
       <div className="flex flex-row gap-2 md:gap-5">
         {tags.map(({ full, short, id }) => {
