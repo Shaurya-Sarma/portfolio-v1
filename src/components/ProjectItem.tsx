@@ -2,20 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { Project } from "../helpers/constants";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useInView } from "react-intersection-observer";
 
 interface ProjectTileProps {
   number: string;
   project: Project;
 }
 
-function ProjectItem({ number, project }: ProjectTileProps) {
+function ProjectItem(props: ProjectTileProps) {
   const navigate = useNavigate();
-  const [isHovered, setIsHovered] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true, // load only once
-    rootMargin: "200px", // start loading before it scrolls into view
-  });
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const states = {
     initial: { y: 0, opacity: 1 },
@@ -24,8 +19,7 @@ function ProjectItem({ number, project }: ProjectTileProps) {
   };
 
   return (
-    <div ref={ref} className="flex flex-col items-start">
-      {/* Top label */}
+    <>
       <motion.span
         className="text-xl font-medium uppercase -mb-1 text-left -z-10"
         variants={states}
@@ -33,42 +27,29 @@ function ProjectItem({ number, project }: ProjectTileProps) {
         animate={isHovered ? "hoverDown" : "initial"}
         transition={{ duration: 0.25 }}
       >
-        {number}
+        {props.number}
       </motion.span>
+      <video
+        key={props.project.slug}
+        className="w-[100%] aspect-[2/1.2] object-cover cursor-pointer shadow-md transition-all duration-500 hover:scale-125"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={props.project.thumbnail} // optional
+        role="img"
+        aria-label={`Thumbnail for ${props.number}`}
+        onClick={() => {
+          navigate(`/projects/${props.project.slug}`);
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <source src={props.project.animated_thumbnail} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Lazy-loaded video */}
-      {inView ? (
-        <video
-          key={project.slug}
-          className="w-full aspect-[2/1.2] object-cover cursor-pointer shadow-md transition-all duration-500 hover:scale-125"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster={project.thumbnail}
-          role="img"
-          aria-label={`Thumbnail for ${number}`}
-          onClick={() => navigate(`/projects/${project.slug}`)}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <source src={project.animated_thumbnail} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      ) : (
-        // Fallback thumbnail before the video loads
-        <img
-          src={project.thumbnail}
-          alt={`Thumbnail for ${number}`}
-          className="w-full aspect-[2/1.2] object-cover cursor-pointer shadow-md transition-all duration-500 hover:scale-125"
-          onClick={() => navigate(`/projects/${project.slug}`)}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        />
-      )}
-
-      {/* Bottom label */}
       <motion.span
         className="text-xl font-medium lowercase text-left -z-10"
         variants={states}
@@ -76,9 +57,9 @@ function ProjectItem({ number, project }: ProjectTileProps) {
         animate={isHovered ? "hoverUp" : "initial"}
         transition={{ duration: 0.25 }}
       >
-        {project.title}
+        {props.project.title}
       </motion.span>
-    </div>
+    </>
   );
 }
 
