@@ -76,7 +76,7 @@ export const PROJECT_METADATA = {
     roles: "",
     type: "Academic",
     thumbnail: "/images/rasterizer-shaders/rasterizer-shaders.png",
-    animated_thumbnail: "/images/rasterizer-shaders/rasterizer-shaders-v2.mp4",
+    animated_thumbnail: "/images/rasterizer-shaders/rasterizer-shaders-v3.mp4",
     demo_link: "",
     slug: "rasterizer-shaders",
     tags: ["computer graphics"],
