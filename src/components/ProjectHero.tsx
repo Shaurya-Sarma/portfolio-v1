@@ -19,6 +19,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
           className="w-full object-cover rounded-md shadow-xl mb-10"
           autoPlay
           loop
+          muted
           playsInline
           preload="metadata"
           poster={project.thumbnail} // optional fallback image

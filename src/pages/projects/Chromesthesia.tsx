@@ -41,6 +41,14 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
             inspiration from descriptions of projective chromesthesia, where
             colors are perceived externally in the environment.
           </p>
+          <iframe
+            className="w-full h-[60vh] my-5 rounded-sm shadow-md"
+            src="https://www.youtube.com/embed/Gu4aIIVIcTM?si=hKqB_6s1bnO8Rk_l"
+            title="Penn Place Demo"
+            allowFullScreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
           <div className="callout">
             "I have projective chromesthesia. I see every sound from quiet to
             loud, musical or not... The timbre of the sound forms the shape I
@@ -51,6 +59,12 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
             think about a sound without seeing it. It is the same thing." –
             u/s-multicellular (reddit user from r/Synesthesia)
           </div>
+          <p>
+            The goal was to create a system that translates sounds generated
+            from physical interactions in a VR environment into vibrant, dynamic
+            ripple effects on surfaces, simulating the experience of
+            chromesthesia.{" "}
+          </p>
           <figure>
             <img
               className="rounded-sm shadow-md"
@@ -63,12 +77,6 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
               wasn't used but can be explored in future iterations.
             </figcaption>
           </figure>
-          <p>
-            The goal was to create a system that translates sounds generated
-            from physical interactions in a VR environment into vibrant, dynamic
-            ripple effects on surfaces, simulating the experience of
-            chromesthesia.{" "}
-          </p>
           {/* System Overview */}
           <h5>System Overview</h5>
           <p>

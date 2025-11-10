@@ -67,6 +67,20 @@ export const PROJECT_METADATA = {
     slug: "chromesthesia",
     tags: ["computer graphics"],
   },
+  rasterizer_shaders: {
+    title: "Rasterizer & OpenGL Shaders",
+    description:
+      "A project for my interactive computer graphics class exploring the fundamental graphics pipeline, graphics programming, and creative shader effects. The first part implements a 2D and 3D triangle rasterizer with a perspective projection camera using C++ and Qt, covering vertex transformations, barycentric interpolation, and pixel rasterization. The second part develops OpenGL-based post-processing and surface shaders, including Blinn-Phong, Matcap, Gaussian blur, Sobel edge detection, and noise-driven effects. Worked with VBOs, VAOs, FBOs, GLSL shaders, and texture mapping for rendering and effects.",
+    skills:
+      "C++, OpenGL, GLSL, QT, Shader Programming, Rasterization, 3D Math, Computer Graphics, Procedural Effects",
+    roles: "",
+    type: "Academic",
+    thumbnail: "/images/rasterizer-shaders/rasterizer-shaders.png",
+    animated_thumbnail: "/images/rasterizer-shaders/rasterizer-shaders.mp4",
+    demo_link: "",
+    slug: "rasterizer-shaders",
+    tags: ["computer graphics"],
+  },
   capsule: {
     title: "Capsule",
     description:
