@@ -53,6 +53,20 @@ export const PROJECT_METADATA = {
     slug: "lattice-configurator",
     tags: ["software dev, computer graphics"],
   },
+  chromesthesia: {
+    title: "Chromesthesia VR",
+    description:
+      "An experimental (work-in-progress) VR project that translates sound into immersive visual experiences based on projective chromesthesia. Users can interact with objects in the VR space to produce sounds, which generate procedurally-created colored ripples with corresponding physical properties. This system aims to provide a perceptual experience inspired by projective chromesthesia inside an immersive virtual environment.",
+    skills:
+      "Unity, VR, C#, GLSL/HLSL, Shader Graph, Blender, Graphics Programming, Physics Simulation, Procedural Audio",
+    roles: "",
+    type: "Concept",
+    thumbnail: "/images/chromesthesia-vr/chromesthesia-vr.png",
+    animated_thumbnail: "/images/chromesthesia-vr/chromesthesia-vr.mp4",
+    demo_link: "",
+    slug: "chromesthesia",
+    tags: ["computer graphics"],
+  },
   capsule: {
     title: "Capsule",
     description:
@@ -64,7 +78,7 @@ export const PROJECT_METADATA = {
     animated_thumbnail: "/images/capsule/capsule.mp4",
     demo_link: "",
     slug: "capsule",
-    tags: ["computer graphics, software dev"],
+    tags: ["software dev"],
   },
   echo: {
     title: "Echo",

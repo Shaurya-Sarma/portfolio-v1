@@ -9,6 +9,7 @@ import StudyHungry from "./projects/StudyHungry";
 import Echo from "./projects/Echo";
 import Capsule from "./projects/Capsule";
 import LatticeConfigurator from "./projects/LatticeConfigurator";
+import Chromesthesia from "./projects/Chromesthesia";
 
 //! react-router and r3f not very good together, canvas won't render in nested routes
 
@@ -28,6 +29,7 @@ function ProjectBreakdownPage() {
     "lattice-configurator": (
       <LatticeConfigurator project={PROJECT_METADATA.lattice_configurator} />
     ),
+    chromesthesia: <Chromesthesia project={PROJECT_METADATA.chromesthesia} />,
   };
 
   return slug && componentsMap[slug] ? (

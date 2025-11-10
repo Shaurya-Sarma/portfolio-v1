@@ -30,6 +30,7 @@ function ProjectItem(props: ProjectTileProps) {
         {props.number}
       </motion.span>
       <video
+        key={props.project.slug}
         className="w-[100%] aspect-[2/1.2] object-cover cursor-pointer shadow-md transition-all duration-500 hover:scale-125"
         autoPlay
         muted

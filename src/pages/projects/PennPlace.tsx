@@ -269,7 +269,7 @@ if (intersect.face) {
               <SyntaxHighlighter
                 language={"typescript"}
                 style={oneDark}
-                showLineNumbers={false}
+                showLineNumbers={true}
                 wrapLines={true}
               >{`// helper function to calculate the offset for a voxel
 const getOffset = (x, y, z) => {
@@ -285,7 +285,7 @@ const getOffset = (x, y, z) => {
             <SyntaxHighlighter
               language={"typescript"}
               style={oneDark}
-              showLineNumbers={false}
+              showLineNumbers={true}
               wrapLines={true}
             >{`// take bit representation of board and return array of voxels
 export const deserializeVoxels = (binaryVoxels) => {

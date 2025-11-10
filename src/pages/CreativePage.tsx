@@ -34,7 +34,7 @@ function CreativePage() {
           </Canvas>
         </div>
 
-        <div className="w-full flex flex-col px-8 pt-8  max-w-screen-xl mt-12 sm:mt-14 mb-0 md:mb-8">
+        <div className="w-full flex flex-col px-8 pt-8 gap-6 max-w-screen-xl mt-12 sm:mt-14 mb-0 md:mb-8">
           {/* Art Filter Bar */}
           <FilterBar
             header="some cool stuff:"

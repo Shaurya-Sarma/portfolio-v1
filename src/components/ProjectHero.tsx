@@ -18,7 +18,6 @@ function ProjectHero({ project }: ProjectHeroProps) {
         <video
           className="w-full object-cover rounded-md shadow-xl mb-10"
           autoPlay
-          muted
           loop
           playsInline
           preload="metadata"
