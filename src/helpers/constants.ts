@@ -18,7 +18,8 @@ export type Project = {
   type: string;
   thumbnail: string;
   animated_thumbnail: string;
-  demo_link: string;
+  demo_link?: string;
+  source_link?: string;
   slug: string;
   tags: readonly string[];
 };
@@ -36,9 +37,10 @@ export const PROJECT_METADATA = {
     type: "Web Experience",
     thumbnail: "/images/penn-place/penn_place.png",
     animated_thumbnail: "/images/penn-place/penn_place.mp4",
-    demo_link: "https://penn.place/",
+    demo_link: "",
+    source_link: "https://github.com/PennSpark/fa24-3dplace",
     slug: "penn-place",
-    tags: ["software dev, computer graphics"],
+    tags: ["software dev"],
   },
   lattice_configurator: {
     title: "Immersive XR Lattice Configurator",
@@ -50,20 +52,22 @@ export const PROJECT_METADATA = {
     thumbnail: "/images/lattice-configurator/lattice-configurator.png",
     animated_thumbnail: "/images/lattice-configurator/lattice-configurator.mp4",
     demo_link: "",
+    source_link: "",
     slug: "lattice-configurator",
     tags: ["software dev, computer graphics"],
   },
   chromesthesia: {
     title: "Chromesthesia VR",
     description:
-      "An experimental (work-in-progress) VR project that translates sound into immersive visual experiences based on projective chromesthesia. Users can interact with objects in the VR space to produce sounds, which generate procedurally-created colored ripples with corresponding physical properties. This system aims to provide a perceptual experience inspired by projective chromesthesia inside an immersive virtual environment.",
+      "An experimental VR project that translates sound into immersive visual experiences based on projective chromesthesia. Users can interact with objects in the VR space to produce sounds, which generate procedurally-created colored ripples with corresponding physical properties. This system aims to provide a perceptual experience inspired by projective chromesthesia inside an immersive virtual environment.",
     skills:
       "Unity, VR, C#, GLSL/HLSL, Shader Graph, Blender, Graphics Programming, Physics Simulation, Procedural Audio",
     roles: "",
     type: "Concept",
-    thumbnail: "/images/chromesthesia-vr/chromesthesia-vr.png",
-    animated_thumbnail: "/images/chromesthesia-vr/chromesthesia-vr-v2.mp4",
+    thumbnail: "/images/chromesthesia-vr/chromesthesia-vr-v2.png",
+    animated_thumbnail: "/images/chromesthesia-vr/chromesthesia-vr-v3.mp4",
     demo_link: "",
+    source_link: "https://github.com/Shaurya-Sarma/color-synth",
     slug: "chromesthesia",
     tags: ["computer graphics"],
   },
@@ -78,6 +82,8 @@ export const PROJECT_METADATA = {
     thumbnail: "/images/rasterizer-shaders/rasterizer-shaders.png",
     animated_thumbnail: "/images/rasterizer-shaders/rasterizer-shaders-v3.mp4",
     demo_link: "",
+    source_link:
+      "https://github.com/CIS4600-Fall-2025/homework-04-intro-to-opengl-Shaurya-Sarma",
     slug: "rasterizer-shaders",
     tags: ["computer graphics"],
   },
@@ -91,6 +97,7 @@ export const PROJECT_METADATA = {
     thumbnail: "/images/capsule/capsule.png",
     animated_thumbnail: "/images/capsule/capsule.mp4",
     demo_link: "",
+    source_link: "https://github.com/PennSpark/sp25-penn-time-capsule",
     slug: "capsule",
     tags: ["software dev"],
   },
@@ -105,6 +112,7 @@ export const PROJECT_METADATA = {
     thumbnail: `/images/echo/echo.png`,
     animated_thumbnail: "/images/echo/echo.mp4",
     demo_link: "",
+    source_link: "https://github.com/Safa-Karagoz/echo.",
     slug: "echo",
     tags: ["software dev"],
   },
@@ -118,6 +126,7 @@ export const PROJECT_METADATA = {
     thumbnail: `/images/storify/storify.png`,
     animated_thumbnail: "/images/storify/storify.mp4",
     demo_link: "",
+    source_link: "",
     slug: "storify",
     tags: ["software dev"],
   },
@@ -131,6 +140,7 @@ export const PROJECT_METADATA = {
     thumbnail: "/images/resurrection/resurrection.png",
     animated_thumbnail: "/images/resurrection/resurrection.mp4",
     demo_link: "https://shaux.itch.io/resurrection",
+    source_link: "",
     slug: "resurrection",
     tags: ["software dev"],
   },
@@ -144,22 +154,8 @@ export const PROJECT_METADATA = {
     thumbnail: "/images/studyhungry/studyhungry.png",
     animated_thumbnail: "/images/studyhungry/studyhungry.png",
     demo_link: "",
+    source_link: "",
     slug: "studyhungry",
-    tags: ["software dev"],
-  },
-  tsp_problem: {
-    title: "Traveling Salesperson Problem",
-    description:
-      "An interactive visualization of the Traveling Salesperson Problem using a genetic algorithm called Neuroevolution of Augmenting Topologies (NEAT). Users can tweak the number of cities and salespeople to watch the algorithm evolve optimized routes over generations, simulating natural selection, mutations, and inheritance. This project combines optimization, AI, and neural network evolution to solve a classic problem in a visually engaging way.",
-    skills: "Javascript, p5.js",
-    roles: "",
-    type: "Web Experiment",
-    thumbnail:
-      "/images/traveling-salesperson-visualization/traveling-salesperson-visualization.png",
-    animated_thumbnail:
-      "/images/traveling-salesperson-visualization/traveling-salesperson-visualization.mp4",
-    demo_link: "https://shaurya-sarma.github.io/traveling-sales-man-problem/",
-    slug: "traveling-salesperson-visualization",
     tags: ["software dev"],
   },
 } as const;

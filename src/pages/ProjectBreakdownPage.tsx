@@ -21,9 +21,6 @@ function ProjectBreakdownPage() {
     "penn-place": <PennPlace project={PROJECT_METADATA.penn_place} />,
     storify: <Storify project={PROJECT_METADATA.storify} />,
     resurrection: <Resurrection project={PROJECT_METADATA.resurrection} />,
-    "traveling-salesperson-visualization": (
-      <TravelingSalespersonProblem project={PROJECT_METADATA.tsp_problem} />
-    ),
     studyhungry: <StudyHungry project={PROJECT_METADATA.studyhungry} />,
     echo: <Echo project={PROJECT_METADATA.echo} />,
     capsule: <Capsule project={PROJECT_METADATA.capsule} />,

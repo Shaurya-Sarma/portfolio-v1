@@ -37,6 +37,7 @@ function ProjectHero({ project }: ProjectHeroProps) {
             <h4 className=" uppercase font-semibold text-black bg-[#F5B700] px-1 mr-2">
               {project.type}
             </h4>
+
             {project.demo_link && (
               <h4
                 className="uppercase font-semibold border-l-2 border-black pl-2 cursor-pointer select-none z-10"
@@ -49,6 +50,22 @@ function ProjectHero({ project }: ProjectHeroProps) {
                   rel="noopener noreferrer"
                 >
                   Demo
+                </a>
+              </h4>
+            )}
+
+            {project.source_link && (
+              <h4
+                className="uppercase font-semibold border-l-2 border-black pl-2 ml-2 cursor-pointer select-none z-10"
+                onMouseEnter={() => setCursorHover(true)}
+                onMouseLeave={() => setCursorHover(false)}
+              >
+                <a
+                  href={project.source_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source Code
                 </a>
               </h4>
             )}

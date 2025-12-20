@@ -17,17 +17,9 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
           {/* Description */}
           <h5>Inspiration</h5>
           <p>
-            The objective of this project (
-            <a
-              href="https://github.com/Shaurya-Sarma/color-synth/tree/main"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              source code
-            </a>
-            ) was to explore how we can leverage virtual reality to create an
-            immersive experience that simulates a perceptual phenomenon which is
-            hard to perceive under regular circumstances.{" "}
+            The objective of this project was to explore how we can leverage
+            virtual reality to create an immersive experience that simulates a
+            unique perceptual phenomenon.{" "}
             <a
               href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4286234/"
               target="_blank"
@@ -36,19 +28,11 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
               Chromesthesia
             </a>{" "}
             is a type of neurological condition where individuals involuntarily
-            perceive colors in response to sounds.These colors manifest in
+            perceive colors in response to sounds. These colors manifest in
             different ways for different people, but I specifically drew
             inspiration from descriptions of projective chromesthesia, where
             colors are perceived externally in the environment.
           </p>
-          <iframe
-            className="w-full h-[60vh] my-5 rounded-sm shadow-md"
-            src="https://www.youtube.com/embed/Gu4aIIVIcTM?si=hKqB_6s1bnO8Rk_l"
-            title="Penn Place Demo"
-            allowFullScreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
           <div className="callout">
             "I have projective chromesthesia. I see every sound from quiet to
             loud, musical or not... The timbre of the sound forms the shape I
@@ -56,14 +40,14 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
             or less where the sound is coming from... I thought it was normal
             until I was a tween. I still have a hard time understanding how
             someone couldn't see sound. Super weird to think about. I can't even
-            think about a sound without seeing it. It is the same thing." –
+            think about a sound without seeing it. It is the same thing." -
             u/s-multicellular (reddit user from r/Synesthesia)
           </div>
           <p>
             The goal was to create a system that translates sounds generated
             from physical interactions in a VR environment into vibrant, dynamic
             ripple effects on surfaces, simulating the experience of
-            chromesthesia.{" "}
+            chromesthesia.
           </p>
           <figure>
             <img
@@ -77,6 +61,14 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
               wasn't used but can be explored in future iterations.
             </figcaption>
           </figure>
+          <iframe
+            className="w-full h-[60vh] my-5 rounded-sm shadow-md"
+            src="https://www.youtube.com/embed/XjzxdBby3Lo?si=xOToDbiqEEKMnChv"
+            title="Chromesthesia VR Demo"
+            allowFullScreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
           {/* System Overview */}
           <h5>System Overview</h5>
           <p>
@@ -85,12 +77,11 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
           </p>
           <p>
             <strong>Physics Interpreter:</strong> Acts as the primary event
-            gatekeeper for all physical interactions in the virtual environment.
-            It listens to Unity’s physics engine for collision events and
+            handler for all physical interactions in the virtual environment. It
+            listens to Unity's physics engine for collision events and
             calculates the <em>impact energy</em> of each interaction using
             object velocity, mass, and contact impulse data. To ensure
-            efficiency and visual clarity, it performs several checks before
-            passing data forward:
+            performance, it checks for the following before processing:
           </p>
           <ul>
             <li>
@@ -110,28 +101,25 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
             </li>
           </ul>
           <p>
-            After filtering, the resulting collision packets the ripple-physics
-            metadata are sent to the Interaction Interpreter.
-          </p>
-          <p>
-            <strong>Interaction Interpreter:</strong> Serves as the analytical
-            and creative core of the system. It receives raw collision data and
-            decomposes it into parameters needed for both visual and auditory
-            responses. It also communicates with the{" "}
+            <strong>Interaction Interpreter:</strong> It receives and parses the
+            raw collision data. It communicates with an{" "}
             <strong>Audio Manager</strong> to select and play impact sounds
             based on material properties, layering multiple sound clips with
-            dynamic pitch and volume modulation based on energy and distance.
-            Once processed, a <code>RippleEvent</code> containing all visual
-            parameters is sent to the Sound-to-Color Manager.
+            dynamic pitch and varying volume based on energy and distance.
+            Additionally, based on the type of impact (soft or hard) and the
+            material of the objects a <em>RippleEvent</em> containing all visual
+            parameters is sent to the Sound-to-Color Manager. For example, two
+            pillows colliding would generate a soft, smooth ripple while a glass
+            vase breaking would produce a sharp, high-frequency ripple.
           </p>
 
           <p>
             {" "}
             <strong>Sound-to-Color Manager:</strong> Bridges the CPU and GPU by
-            sending ripple data to the <strong>GPU Ripple Shader</strong> for
+            sending ripple data to the <strong>Ripple Shader</strong> for
             visualization. Rather than issuing many draw calls, it writes each
-            ripple’s parameters into compact{" "}
-            <strong>1D floating-point textures</strong>, minimizing CPU–GPU
+            ripple's parameters into compact{" "}
+            <strong>1D floating-point textures</strong>, minimizing CPU-GPU
             communication overhead. Each texel stores:
           </p>
           <ul>
@@ -147,19 +135,29 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
             </li>
           </ul>
           <p>
-            By updating these textures incrementally and recycling expired
-            ripples through a circular buffer, the system maintains stable
-            memory usage and supports simultaneous ripple events in real time.
+            By updating these textures and skipping expired ripples, the system
+            maintains stable memory usage and supports simultaneous ripple
+            events in real time.
           </p>
-
+          <figure>
+            <img
+              className="rounded-sm shadow-md"
+              alt="pipeline diagram"
+              src="/images/chromesthesia-vr/pipeline-diagram.jpg"
+            />
+            <figcaption>
+              A visual diagram of the overall system architecture, showing the
+              flow from physics events to audio generation to ripple rendering.
+            </figcaption>
+          </figure>
           {/* Ripple Generation */}
           <h5>Ripple Generation</h5>
           <p>
             Each ripple is generated from the physics data passed through the
-            system, with every parameter—speed, size, color, fade width, and
-            texture noise—interpolated from the collision's impact energy,
+            system, with every parameter (speed, size, color, fade width, and
+            texture noise) interpolated from the collision's impact energy,
             distance, and material properties. This ensures that each visual
-            response accurately reflects the nature of the physical interaction.
+            response reflects the nature of the physical interaction.
           </p>
           <ul>
             <li>
@@ -194,10 +192,18 @@ const Chromesthesia: React.FC<{ project: Project }> = ({ project }) => {
           <p>
             Ripples are rendered via a{" "}
             <strong>custom HLSL shader script</strong> that uses{" "}
-            <strong>domain warping</strong> to produce watercolor-like
-            boundaries. By applying noise and spatial distortions to distance
-            fields, ripples gain organic, fluid edges rather than hard circular
-            borders.
+            <strong>
+              <a
+                href="https://iquilezles.org/articles/warp/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                domain warping
+              </a>{" "}
+            </strong>{" "}
+            to produce watercolor-like boundaries. By applying noise and spatial
+            distortions to distance fields, ripples gain organic, fluid edges
+            rather than hard circular borders.
           </p>
           <div className="code">
             <SyntaxHighlighter
@@ -241,11 +247,71 @@ float warpyNoise(float2 p, float time)
               should have outlines or not.
             </figcaption>
           </figure>
+
+          <h5>Procedural Noise Baking (Performance Optimization)</h5>
+          <p>
+            Early iterations of the ripple system evaluated{" "}
+            <strong>domain warping per ripple</strong> directly in the shader.
+            While the ripples looked visually intricate, this approach took too
+            many resources and caused significant frame drops, especially with
+            interactions like{" "}
+            <strong>projectile impacts and object shattering</strong>, where a
+            single event could generate dozens of overlapping ripples.
+          </p>
+
+          <figure>
+            <img
+              className="rounded-sm shadow-md"
+              alt="domain warped noise texture"
+              src="/images/chromesthesia-vr/domain-warped-noise-texture.png"
+            />
+            <figcaption>
+              The pre-baked domain-warped noise texture used to perturb ripple's
+              edges in the shader, significantly improving performance.
+            </figcaption>
+          </figure>
+
+          <p>
+            To address this, I transitioned from fully procedural noise
+            evaluation to a <strong>baked domain warp texture</strong>. The
+            domain-warped noise field is precomputed beforehand and stored as a
+            seamless texture. At runtime, the shader simply samples this texture
+            to apply the warping effect and reduces the computational load
+            significally. This greatly expanded the number of simultaneous
+            ripples to be generated with a decent frame rate.
+          </p>
+
+          <div className="code">
+            <SyntaxHighlighter
+              language={"glsl"}
+              style={oneDark}
+              showLineNumbers={true}
+              wrapLines={true}
+            >{`float2 noiseUV = frac(worldPos.xz * noiseScale * 0.05);
+
+// sample pre-baked domain warp texture
+float n = SAMPLE_TEXTURE2D_LOD(
+    DoubleWarpNoise,
+    SamplerDoubleWarpNoise,
+    noiseUV,
+    0).r;
+
+// modulate ripple radius using baked noise
+float perturbedRadius = radius + (n - 0.5) * noiseStrength;
+
+// calculate fade based on distance from ripple center
+float fade = 1.0 - smoothstep(
+    perturbedRadius,
+    perturbedRadius + fadeWidth * 0.5,
+    dist
+);`}</SyntaxHighlighter>
+          </div>
+
           {/* Future Work */}
           <h5>Future Work</h5>
           <p>
             Chromesthesia remains a work-in-progress with multiple directions
-            for expansion:
+            for potential expansion:
           </p>
           <ul className="list-disc pl-6">
             <li>
@@ -253,18 +319,9 @@ float warpyNoise(float2 p, float time)
               objects, wind) producing pulsing wave ripples.
             </li>
             <li>
-              Expand VR interactions for more immersive experiences, including
-              shooting projectiles, movement-based ripple/sound generation,
-              expanded environment size/complexity, etc.
-            </li>
-            <li>
-              Optimize the ripple shader: shift from per-object computation to
-              post-process using scene depth to improve GPU performance. Right
-              now, frame rate drops with many simultaneous ripples. Lots of
-              pixels are unnecssarily being computed multiple times for
-              overlapping ripples so doing a single full-screen pass would be
-              more efficient and hopefully allow hundreds of more ripples at
-              once.
+              Expand VR interactions for more immersive experiences,
+              movement-based ripple/sound generation (i.e. footsteps), expanded
+              environment size/complexity, etc.
             </li>
             <li>
               Enhance the procedural sound system with more material types,
