@@ -71,6 +71,22 @@ export const PROJECT_METADATA = {
     slug: "chromesthesia",
     tags: ["computer graphics"],
   },
+  mini_minecraft: {
+    title: "Mini Minecraft",
+    description:
+      "Mini Minecraft is a simplified version of Minecraft built from scratch using C++ and OpenGL, featuring procedural terrain generation, post-processing effects, shadow mapping, player physics, and custom loading and texturing of Pokémon 3D models.",
+    skills:
+      "C++, OpenGL, GLSL, QT, Shader Programming, Computer Graphics, Procedural Generation/Effects",
+    roles: "Team Developer",
+    type: "Academic",
+    thumbnail: "/images/mini-minecraft/mini-minecraft.png",
+    animated_thumbnail: "/images/mini-minecraft/mini-minecraft.mp4",
+    demo_link: "",
+    source_link:
+      "https://github.com/CIS4600-Fall-2025/mini-minecraft-group-graphics-goons",
+    slug: "mini-minecraft",
+    tags: ["computer graphics"],
+  },
   rasterizer_shaders: {
     title: "Rasterizer & OpenGL Shaders",
     description:
