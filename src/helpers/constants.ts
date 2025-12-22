@@ -74,10 +74,10 @@ export const PROJECT_METADATA = {
   mini_minecraft: {
     title: "Mini Minecraft",
     description:
-      "Mini Minecraft is a simplified version of Minecraft built from scratch using C++ and OpenGL, featuring procedural terrain generation, post-processing effects, shadow mapping, player physics, and custom loading and texturing of Pokémon 3D models.",
+      "Mini Minecraft is a simplified version of Minecraft built from scratch using C++ and OpenGL, featuring procedural terrain generation, post-processing effects, shadow mapping, player physics, and custom loading and texturing of 1000+ Pokémon 3D models.",
     skills:
       "C++, OpenGL, GLSL, QT, Shader Programming, Computer Graphics, Procedural Generation/Effects",
-    roles: "Team Developer",
+    roles: "Developer (3-member team)",
     type: "Academic",
     thumbnail: "/images/mini-minecraft/mini-minecraft.png",
     animated_thumbnail: "/images/mini-minecraft/mini-minecraft.mp4",

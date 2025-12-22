@@ -10,6 +10,7 @@ import Capsule from "./projects/Capsule";
 import LatticeConfigurator from "./projects/LatticeConfigurator";
 import Chromesthesia from "./projects/Chromesthesia";
 import RasterizerShaders from "./projects/RasterizerShaders";
+import MiniMinecraft from "./projects/MiniMinecraft";
 
 //! react-router and r3f not very good together, canvas won't render in nested routes
 
@@ -18,6 +19,9 @@ function ProjectBreakdownPage() {
 
   const componentsMap: Record<string, JSX.Element> = {
     "penn-place": <PennPlace project={PROJECT_METADATA.penn_place} />,
+    "mini-minecraft": (
+      <MiniMinecraft project={PROJECT_METADATA.mini_minecraft} />
+    ),
     storify: <Storify project={PROJECT_METADATA.storify} />,
     resurrection: <Resurrection project={PROJECT_METADATA.resurrection} />,
     studyhungry: <StudyHungry project={PROJECT_METADATA.studyhungry} />,
