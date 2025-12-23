@@ -3,7 +3,6 @@ import PennPlace from "./projects/PennPlace";
 import { PROJECT_METADATA } from "../helpers/constants";
 import Storify from "./projects/Storify";
 import ErrorPage from "../components/ErrorPage";
-import Resurrection from "./projects/Resurrection";
 import Echo from "./projects/Echo";
 import Capsule from "./projects/Capsule";
 import LatticeConfigurator from "./projects/LatticeConfigurator";
