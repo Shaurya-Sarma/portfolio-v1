@@ -132,6 +132,22 @@ export const PROJECT_METADATA = {
     slug: "echo",
     tags: ["software dev"],
   },
+  public_music_queue: {
+    title: "Public Music Queue",
+    description:
+      "A real-time, collaborative music discovery platform where anyone can contribute to shared public queues. Users join genre-based rooms, add tracks from Spotify, and listen together as queues and playback stay synchronized across all participants.",
+    skills:
+      "React, TypeScript, Node.js, Express, Socket.io, PostgreSQL, WebSockets, Spotify API",
+    roles: "Project Lead, Developer, Designer",
+    type: "Web Experience",
+    thumbnail: "/images/public-music-queue/public-music-queue.png",
+    animated_thumbnail: "/images/public-music-queue/public-music-queue.mp4",
+    demo_link: "",
+    source_link: "https://github.com/wesleyyliu/public-music-queue",
+    slug: "public-music-queue",
+    tags: ["software dev"],
+  },
+
   storify: {
     title: "Storify",
     description:
@@ -146,34 +162,6 @@ export const PROJECT_METADATA = {
     slug: "storify",
     tags: ["software dev"],
   },
-  resurrection: {
-    title: "Resurrection",
-    description:
-      "A 2D action-platformer game inspired by some of my favorite games I played growing up like Dark Souls, Celeste, and The Legend of Zelda. Involved level design, game state management, AI-behavior for various types of enemies (including boss behavior with multiple phases), and exploration-puzzle features like keys + doors. Assets were mostly found from http://opengameart.org and the Unity Asset Store, however, a few were made from scratch.",
-    skills: "Unity 2D, C#, Aesprite",
-    roles: "",
-    type: "Game Dev",
-    thumbnail: "/images/resurrection/resurrection.png",
-    animated_thumbnail: "/images/resurrection/resurrection.mp4",
-    demo_link: "https://shaux.itch.io/resurrection",
-    source_link: "",
-    slug: "resurrection",
-    tags: ["software dev"],
-  },
-  studyhungry: {
-    title: "StudyHungry",
-    description:
-      "A productivity app designed specifically for students I was tutoring. Includes a pomodoro system, daily agenda list, curated videos targetting studying-related topics, customizable routines to design your own study sessions. The pomodoro system has two unique focus modes: one that forces you to flip your phone upside down to eliminate distrctions and a lockdown mode to keep you inside the app and resist the temptation to scroll or check social media.",
-    skills: "React Native, Typescript",
-    roles: "",
-    type: "Mobile Dev",
-    thumbnail: "/images/studyhungry/studyhungry.png",
-    animated_thumbnail: "/images/studyhungry/studyhungry.png",
-    demo_link: "",
-    source_link: "",
-    slug: "studyhungry",
-    tags: ["software dev"],
-  },
 } as const;
 
 export const CREATIVE_METADATA = [
@@ -181,6 +169,26 @@ export const CREATIVE_METADATA = [
     url: "artie_models.png",
     tags: ["3D"],
     title: "Artie Models",
+  },
+  {
+    url: "resting_place.jpg",
+    tags: ["3D"],
+    title: "Resting Place",
+  },
+  {
+    url: "beyond_the_wall.jpg",
+    tags: ["3D"],
+    title: "Beyond the Wall",
+  },
+  {
+    url: "classroom_01.jpg",
+    tags: ["3D"],
+    title: "Classroom I",
+  },
+  {
+    url: "classroom_02.jpg",
+    tags: ["3D"],
+    title: "Classroom II",
   },
   {
     url: "audio_visualizer_01.jpg",
@@ -193,14 +201,19 @@ export const CREATIVE_METADATA = [
     title: "Audio Visualizer II",
   },
   {
-    url: "beyond_the_wall.jpg",
+    url: "runtime_01.png",
     tags: ["3D"],
-    title: "Beyond the Wall",
+    title: "Runtime 01",
   },
   {
-    url: "blue_moon.png",
+    url: "runtime_02.png",
     tags: ["3D"],
-    title: "Blue Moon",
+    title: "Runtime 02",
+  },
+  {
+    url: "crimson_forest.jpg",
+    tags: ["3D"],
+    title: "Crimson Forest",
   },
   {
     url: "dmeter.jpeg",
@@ -223,21 +236,6 @@ export const CREATIVE_METADATA = [
     title: "City at Night II",
   },
   {
-    url: "classroom_01.jpg",
-    tags: ["3D"],
-    title: "Classroom I",
-  },
-  {
-    url: "classroom_02.jpg",
-    tags: ["3D"],
-    title: "Classroom II",
-  },
-  {
-    url: "crimson_forest.jpg",
-    tags: ["3D"],
-    title: "Crimson Forest",
-  },
-  {
     url: "false_god_01.png",
     tags: ["3D"],
     title: "False God I",
@@ -248,15 +246,16 @@ export const CREATIVE_METADATA = [
     title: "False God II",
   },
   {
+    url: "blue_moon.png",
+    tags: ["3D"],
+    title: "Blue Moon",
+  },
+  {
     url: "midsummer_dream.png",
     tags: ["3D"],
     title: "Midsummer Dream",
   },
-  {
-    url: "resting_place.jpg",
-    tags: ["3D"],
-    title: "Resting Place",
-  },
+
   {
     url: "sand_dunes.png",
     tags: ["3D"],

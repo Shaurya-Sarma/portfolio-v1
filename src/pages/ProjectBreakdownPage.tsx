@@ -4,13 +4,13 @@ import { PROJECT_METADATA } from "../helpers/constants";
 import Storify from "./projects/Storify";
 import ErrorPage from "../components/ErrorPage";
 import Resurrection from "./projects/Resurrection";
-import StudyHungry from "./projects/StudyHungry";
 import Echo from "./projects/Echo";
 import Capsule from "./projects/Capsule";
 import LatticeConfigurator from "./projects/LatticeConfigurator";
 import Chromesthesia from "./projects/Chromesthesia";
 import RasterizerShaders from "./projects/RasterizerShaders";
 import MiniMinecraft from "./projects/MiniMinecraft";
+import PublicMusicQueue from "./projects/PublicMusicQueue";
 
 //! react-router and r3f not very good together, canvas won't render in nested routes
 
@@ -23,8 +23,9 @@ function ProjectBreakdownPage() {
       <MiniMinecraft project={PROJECT_METADATA.mini_minecraft} />
     ),
     storify: <Storify project={PROJECT_METADATA.storify} />,
-    resurrection: <Resurrection project={PROJECT_METADATA.resurrection} />,
-    studyhungry: <StudyHungry project={PROJECT_METADATA.studyhungry} />,
+    "public-music-queue": (
+      <PublicMusicQueue project={PROJECT_METADATA.public_music_queue} />
+    ),
     echo: <Echo project={PROJECT_METADATA.echo} />,
     capsule: <Capsule project={PROJECT_METADATA.capsule} />,
     "lattice-configurator": (
