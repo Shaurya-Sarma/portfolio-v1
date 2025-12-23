@@ -64,15 +64,14 @@ const LatticeConfigurator: React.FC<{ project: Project }> = ({ project }) => {
           ></iframe>
           <h5>Conclusion</h5>
           <p>
-            Working on this project exposed me to topics beyond the scope of my
-            experience in the United States. It was a unique opportunity to
-            collaborate with international researchers while also learning about
-            the field of additive manufacturing (AM) and potential XR
-            applications. Alongside my work, I also passed an A1 German course,
-            which strengthened my communication and foreign language skills in a
-            professional context. I believe this experience would provide a
-            solid foundation for any future research or work opportunities
-            abroad.
+            This research project exposed me to topics outside of my scope
+            within the United States. It was really interesting to collaborate
+            with international researchers and learn more about the additive
+            manufacturing (AM) industry. Alongside my work, I also passed an A1
+            German course, which let me practice my foreign language skills in
+            an practical, professional context almost everyday. This experience
+            provided me with a strong base for future abroad opportunties both
+            on a personal and professional level.
           </p>
         </div>
       </main>
